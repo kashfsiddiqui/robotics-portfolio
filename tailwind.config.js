@@ -26,6 +26,12 @@ export default {
           accent50: '#F7F3EB',
           accent200: '#E2D3BF',
           accent600: '#C6B39A'
+        },
+        claw: {
+          accent: '#F5B2C8', // light pink accent for Claw page
+          accent50: '#FCE7EF',
+          accent200: '#F7C9DA',
+          accent600: '#E67AA1'
         }
       },
       fontFamily: {
