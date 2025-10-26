@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 import SpotProject from './components/SpotProject';
+import SpotPage from './pages/spot';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -12,7 +13,7 @@ function App() {
     // Check URL path on component mount and when URL changes
     const handleRouteChange = () => {
       const path = window.location.pathname;
-      if (path === '/portfolio/spot') {
+      if (path === '/portfolio/spot' || path === '/spot') {
         setCurrentPage('spot');
       } else {
         setCurrentPage('home');
@@ -32,7 +33,7 @@ function App() {
 
   // Handle navigation programmatically
   const navigateToSpot = () => {
-    window.history.pushState({}, '', '/portfolio/spot');
+    window.history.pushState({}, '', '/spot');
     setCurrentPage('spot');
   };
 
@@ -43,13 +44,7 @@ function App() {
   };
 
   if (currentPage === 'spot') {
-    return (
-      <div className="min-h-screen bg-white">
-        <Navigation onHomeClick={navigateToHome} />
-        <SpotProject />
-        <Footer />
-      </div>
-    );
+    return <SpotPage />;
   }
 
   return (

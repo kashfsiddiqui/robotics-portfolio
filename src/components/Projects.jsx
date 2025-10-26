@@ -27,7 +27,7 @@ const Projects = ({ onSpotClick }) => {
       bgColor: "bg-blue-100",
       gridSpan: "col-span-1 row-span-1",
       mobileSpan: "col-span-1 row-span-1",
-      link: "/portfolio/spot"
+      link: "/spot"
     },
     {
       type: "project",
@@ -214,7 +214,7 @@ const Projects = ({ onSpotClick }) => {
                   gridRowEnd: item.type === "intro" ? "span 2" : "span 1"
                 }}
                 onClick={item.type === "project" && item.link ? () => {
-                  if (item.link === "/portfolio/spot" && onSpotClick) {
+                  if (item.link === "/spot" && onSpotClick) {
                     onSpotClick();
                   } else {
                     window.location.href = item.link;
