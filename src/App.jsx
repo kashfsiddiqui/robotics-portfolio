@@ -13,7 +13,7 @@ function App() {
     // Check URL path on component mount and when URL changes
     const handleRouteChange = () => {
       const path = window.location.pathname;
-      if (path === '/portfolio/spot' || path === '/spot') {
+      if (path === '/portfolio/spot') {
         setCurrentPage('spot');
       } else {
         setCurrentPage('home');
@@ -33,7 +33,7 @@ function App() {
 
   // Handle navigation programmatically
   const navigateToSpot = () => {
-    window.history.pushState({}, '', '/spot');
+    window.history.pushState({}, '', '/portfolio/spot');
     setCurrentPage('spot');
   };
 
