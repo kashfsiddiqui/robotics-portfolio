@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-const Projects = () => {
+const Projects = ({ onSpotClick }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px", amount: 0.2 });
 
@@ -213,7 +213,13 @@ const Projects = () => {
                   minHeight: item.type === "intro" ? "400px" : "200px",
                   gridRowEnd: item.type === "intro" ? "span 2" : "span 1"
                 }}
-                onClick={item.type === "project" && item.link ? () => window.location.href = item.link : undefined}
+                onClick={item.type === "project" && item.link ? () => {
+                  if (item.link === "/portfolio/spot" && onSpotClick) {
+                    onSpotClick();
+                  } else {
+                    window.location.href = item.link;
+                  }
+                } : undefined}
               >
                 {item.type === "intro" ? (
                   // Intro block content

@@ -1,12 +1,22 @@
 import { motion } from 'framer-motion';
 
-const Navigation = () => {
+const Navigation = ({ onHomeClick }) => {
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    if (onHomeClick) {
+      onHomeClick();
+    } else {
+      window.location.href = '/';
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between items-center py-4">
           <motion.a
-            href="#"
+            href="/"
+            onClick={handleHomeClick}
             className="flex items-center gap-3 text-lg font-playfair text-gray-900 hover:text-primary transition-colors duration-200"
             whileHover={{ scale: 1.02 }}
           >

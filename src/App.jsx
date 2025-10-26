@@ -1,14 +1,62 @@
+import { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
+import SpotProject from './components/SpotProject';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+
+  useEffect(() => {
+    // Check URL path on component mount and when URL changes
+    const handleRouteChange = () => {
+      const path = window.location.pathname;
+      if (path === '/portfolio/spot') {
+        setCurrentPage('spot');
+      } else {
+        setCurrentPage('home');
+      }
+    };
+
+    // Listen for URL changes
+    window.addEventListener('popstate', handleRouteChange);
+    
+    // Check initial route
+    handleRouteChange();
+
+    return () => {
+      window.removeEventListener('popstate', handleRouteChange);
+    };
+  }, []);
+
+  // Handle navigation programmatically
+  const navigateToSpot = () => {
+    window.history.pushState({}, '', '/portfolio/spot');
+    setCurrentPage('spot');
+  };
+
+  // Handle back navigation
+  const navigateToHome = () => {
+    window.history.pushState({}, '', '/');
+    setCurrentPage('home');
+  };
+
+  if (currentPage === 'spot') {
+    return (
+      <div className="min-h-screen bg-white">
+        <Navigation onHomeClick={navigateToHome} />
+        <SpotProject />
+        <Footer />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
       <Hero />
-      <Projects />
+      <Projects onSpotClick={navigateToSpot} />
       <Footer />
     </div>
   );
