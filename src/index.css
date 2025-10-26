@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    will-change: transform, opacity;
+  }
+  
+  body {
+    @apply bg-white text-gray-900;
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  
+  * {
+    @apply border-gray-200;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  
+  .project-card:hover .project-title {
+    color: #FFFFFF !important;
+  }
+  
+  /* Ensure hover effects are scoped to individual cards */
+  .project-card .overlay {
+    opacity: 0;
+    transition: opacity 0.15s ease-in;
+  }
+  
+  .project-card:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* Image dimming on hover for cleaner feel */
+  .project-card:hover img {
+    filter: brightness(0.75);
+  }
+}
