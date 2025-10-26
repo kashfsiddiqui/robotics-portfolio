@@ -11,7 +11,7 @@ const Navigation = () => {
             whileHover={{ scale: 1.02 }}
           >
             <img 
-              src="/images/logo.png" 
+              src="/images/Landing Page Graphics/logo.png" 
               alt="KS Logo" 
               className="w-8 h-8 rounded-full object-cover"
               onError={(e) => {

@@ -23,17 +23,18 @@ const Projects = () => {
       title: "Boston Dynamics Spot Perception & Control",
       subtitle: "AMRL • LiDAR • Perception",
       description: "Enhanced Spot's perception and control systems with LiDAR, depth, and camera integration.",
-      image: "/images/amrl_spot.png",
+      image: "/images/Landing Page Graphics/amrl_spot.png",
       bgColor: "bg-blue-100",
       gridSpan: "col-span-1 row-span-1",
-      mobileSpan: "col-span-1 row-span-1"
+      mobileSpan: "col-span-1 row-span-1",
+      link: "/portfolio/spot"
     },
     {
       type: "project",
       title: "AMRL Cobot Arm Manipulation & Coordination",
       subtitle: "AMRL • Robotics • Control",
       description: "Designed and simulated multi-axis control system for collaborative robot arm using sensor feedback.",
-      image: "/images/amrl_cobot.png",
+      image: "/images/Landing Page Graphics/amrl_cobot.png",
       bgColor: "bg-green-100",
       gridSpan: "col-span-1 row-span-1",
       mobileSpan: "col-span-1 row-span-1"
@@ -43,7 +44,7 @@ const Projects = () => {
       title: "HCRL Draco 3 Bipedal Robot Planning",
       subtitle: "HCRL • Motion Planning • Control",
       description: "Developed and tested reinforcement-learning-based gait planning for humanoid robot in simulation.",
-      image: "/images/hcrl_draco3.png",
+      image: "/images/Landing Page Graphics/hcrl_draco3.png",
       bgColor: "bg-purple-100",
       gridSpan: "col-span-1 row-span-1",
       mobileSpan: "col-span-1 row-span-1"
@@ -53,7 +54,7 @@ const Projects = () => {
       title: "AMRL Spot Head Servo Actuated Payload & Sensor Mount",
       subtitle: "AMRL • Mechatronics • Sensors",
       description: "Built servo-actuated head and sensor mounts for Boston Dynamics Spot.",
-      image: "/images/amrl_spot_head.png",
+      image: "/images/Landing Page Graphics/amrl_spot_head.png",
       bgColor: "bg-yellow-100",
       gridSpan: "col-span-1 row-span-1",
       mobileSpan: "col-span-1 row-span-1"
@@ -63,7 +64,7 @@ const Projects = () => {
       title: "Texas Aerial Robotics Thrust Vector Drone System",
       subtitle: "TAR • Controls • Simulink",
       description: "Programmed thrust-vector control in Simulink; trajectory accuracy +20%.",
-      image: "/images/tar_dart_drone.png",
+      image: "/images/Landing Page Graphics/tar_dart_drone.png",
       bgColor: "bg-indigo-100",
       gridSpan: "col-span-1 row-span-1",
       mobileSpan: "col-span-1 row-span-1"
@@ -73,7 +74,7 @@ const Projects = () => {
       title: "Guadaloop Dynamics Engineer Bogie Suspension & Controls",
       subtitle: "Guadaloop • Dynamics • Suspension",
       description: "Engineered bogie suspension system and control algorithms for hyperloop pod.",
-      image: "/images/guadaloop_bogie.png",
+      image: "/images/Landing Page Graphics/guadaloop_bogie.png",
       bgColor: "bg-orange-100",
       gridSpan: "col-span-1 row-span-1",
       mobileSpan: "col-span-1 row-span-1"
@@ -83,7 +84,7 @@ const Projects = () => {
       title: "Texas Aerial Robotics Drone Claw Retrieval System",
       subtitle: "TAR • UAV • Manipulation",
       description: "Designed and implemented drone claw system for aerial object retrieval.",
-      image: "/images/tar_drone_claw.png",
+      image: "/images/Landing Page Graphics/tar_drone_claw.png",
       bgColor: "bg-pink-100",
       gridSpan: "col-span-1 row-span-1",
       mobileSpan: "col-span-1 row-span-1"
@@ -93,7 +94,7 @@ const Projects = () => {
       title: "Formula SAE & Baja Off Road Dynamics",
       subtitle: "Racing • Dynamics • Vehicle Control",
       description: "Designed and optimized vehicle dynamics systems for competitive racing.",
-      image: "/images/formula_baja.png",
+      image: "/images/Landing Page Graphics/formula_baja.png",
       bgColor: "bg-red-100",
       gridSpan: "col-span-1 row-span-1",
       mobileSpan: "col-span-1 row-span-1"
@@ -103,7 +104,7 @@ const Projects = () => {
       title: "GUADALOOP Depressurization Research Vacuum Chamber Systems",
       subtitle: "Guadaloop • Vacuum • Research",
       description: "Developed vacuum chamber systems for hyperloop depressurization research.",
-      image: "/images/guadaloop_vacuum.png",
+      image: "/images/Landing Page Graphics/guadaloop_vacuum.png",
       bgColor: "bg-teal-100",
       gridSpan: "col-span-1 row-span-1",
       mobileSpan: "col-span-1 row-span-1"
@@ -113,7 +114,7 @@ const Projects = () => {
       title: "Guadaloop VR Simulation Immersive Pod Dynamics",
       subtitle: "Guadaloop • VR • Unity",
       description: "Developed Unity-based VR simulation for pod testing; stability +15%.",
-      image: "/images/guadaloop_pod_sim.png",
+      image: "/images/Landing Page Graphics/guadaloop_pod_sim.png",
       bgColor: "bg-cyan-100",
       gridSpan: "col-span-1 row-span-1",
       mobileSpan: "col-span-1 row-span-1"
@@ -123,7 +124,7 @@ const Projects = () => {
       title: "AI Powered Content Platform",
       subtitle: "Drillo.AI • Vertex AI • ML",
       description: "Vertex AI recommender with 90%+ accuracy and <200 ms latency.",
-      image: "/images/drilloai_dashboard.png",
+      image: "/images/Landing Page Graphics/drilloai_dashboard.png",
       bgColor: "bg-emerald-100",
       gridSpan: "col-span-1 row-span-1",
       mobileSpan: "col-span-1 row-span-1"
@@ -133,7 +134,7 @@ const Projects = () => {
       title: "AI 3D Printed Planters",
       subtitle: "PicturePlots • CAD • Sustainability",
       description: "Founded startup selling biodegradable planters with AI-generated designs; $10K revenue.",
-      image: "/images/pictureplots_planter.png",
+      image: "/images/Landing Page Graphics/pictureplots_planter.png",
       bgColor: "bg-lime-100",
       gridSpan: "col-span-1 row-span-1",
       mobileSpan: "col-span-1 row-span-1"
@@ -212,6 +213,7 @@ const Projects = () => {
                   minHeight: item.type === "intro" ? "400px" : "200px",
                   gridRowEnd: item.type === "intro" ? "span 2" : "span 1"
                 }}
+                onClick={item.type === "project" && item.link ? () => window.location.href = item.link : undefined}
               >
                 {item.type === "intro" ? (
                   // Intro block content

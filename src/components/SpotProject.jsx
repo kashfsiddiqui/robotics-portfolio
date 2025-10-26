@@ -9,38 +9,38 @@ const SpotProject = () => {
 
   const carouselImages = [
     {
-      src: "/images/portfolio/spot/Dual_Zed_Mount_v1_1920x1080.png",
+      src: "/images/Portfolio/Spot Payload/Dual_Zed_Mount_v1_1920x1080.png",
       caption: "Sensor mount bracket design (Fusion 360)"
     },
     {
-      src: "/images/portfolio/spot/ZEDLink_Duo_Rev1_1920x1080.png",
+      src: "/images/Portfolio/Spot Payload/ZEDLink_Duo_Rev1_1920x1080.png",
       caption: "ZEDLink Duo sensor mount revision"
     },
     {
-      src: "/images/portfolio/spot/spot_payload_mount_bracket_1920x1080.png",
+      src: "/images/Portfolio/Spot Payload/spot_payload_mount_bracket_1920x1080.png",
       caption: "Payload mount plate installed on Spot"
     },
     {
-      src: "/images/portfolio/spot/Battery_Holder_v6_1920x1080.png",
+      src: "/images/Portfolio/Spot Payload/Battery_Holder_v6_1920x1080.png",
       caption: "Battery and adapter subsystem design"
     },
     {
-      src: "/images/portfolio/spot/Buck-Boost_12V_v1_1920x1080.png",
+      src: "/images/Portfolio/Spot Payload/Buck-Boost_12V_v1_1920x1080.png",
       caption: "Power subsystem: Buck-Boost 12 V module"
     },
     {
-      src: "/images/portfolio/spot/velodyne-vlp16_v1_1920x1080.png",
+      src: "/images/Portfolio/Spot Payload/velodyne-vlp16 v1_1920x1080.png",
       caption: "Sensor detail: Velodyne VLP-16 module"
     }
   ];
 
   const thumbnailImages = [
     {
-      src: "/images/portfolio/spot/top_lvl_p3737_01142022_1920x1080.png",
+      src: "/images/Portfolio/Spot Payload/top_lvl_p3737_01142022_1920x1080.png",
       caption: "Top-level board assembly"
     },
     {
-      src: "/images/portfolio/spot/ZEDX_v1_1920x1080.png",
+      src: "/images/Portfolio/Spot Payload/ZEDX v1_1920x1080.png",
       caption: "ZEDX module mock-up"
     }
   ];
@@ -87,7 +87,7 @@ const SpotProject = () => {
       >
         <div className="absolute inset-0">
           <img
-            src="/images/portfolio/spot/spot_full_assembly_1920x1080.png"
+            src="/images/Portfolio/Spot Payload/spot_full_assembly_1920x1080.png"
             alt="Boston Dynamics Spot with sensor payload"
             className="w-full h-full object-cover"
           />
@@ -240,9 +240,9 @@ const SpotProject = () => {
               <video
                 className="w-full h-auto"
                 controls
-                poster="/images/portfolio/spot/Spot_Walking.png"
+                poster="/images/Portfolio/Spot Payload/Spot_Walking.png"
               >
-                <source src="/images/portfolio/spot/Spot_Deployment_Testing.mp4" type="video/mp4" />
+                <source src="/images/Portfolio/Spot Payload/Spot_Deployement_Testing.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -255,7 +255,7 @@ const SpotProject = () => {
           <motion.div variants={itemVariants} className="mt-12">
             <div className="relative overflow-hidden rounded-lg">
               <img
-                src="/images/portfolio/spot/Spot_Walking.png"
+                src="/images/Portfolio/Spot Payload/Spot_Walking.png"
                 alt="Live test image – Spot in operational scenario"
                 className="w-full h-auto transition-transform duration-300 hover:scale-105"
               />
