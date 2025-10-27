@@ -1,69 +1,19 @@
-import React, { useEffect, useRef } from 'react';
-import { SpotCard, SpotOverlay, SpotPill, SpotGallery } from '../components/spot/SpotComponents';
-import '../styles/spot.css';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { RoundedCard } from '../components/ui/RoundedCard';
+import { SectionTitle } from '../components/ui/SectionTitle';
+import { Eyebrow } from '../components/ui/Eyebrow';
 
 const SpotPage = () => {
-  const revealRefs = useRef([]);
-
-  // Scroll reveal animation
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-    );
-
-    revealRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  const addToRevealRefs = (el) => {
-    if (el && !revealRefs.current.includes(el)) {
-      revealRefs.current.push(el);
-    }
-  };
-
-  // Gallery images
-  const galleryImages = [
-    {
-      src: '/images/Portfolio/Spot Payload/Dual_Zed_Mount_v1_1920x1080.png',
-      alt: 'Sensor mount bracket design in Fusion 360',
-      caption: 'Payload bracket'
-    },
-    {
-      src: '/images/Portfolio/Spot Payload/ZEDLink_Duo_Rev1_1920x1080.png',
-      alt: 'ZEDLink Duo sensor mount revision',
-      caption: 'Sensor alignment'
-    },
-    {
-      src: '/images/Portfolio/Spot Payload/Battery_Holder_v6_1920x1080.png',
-      alt: 'Battery and adapter subsystem design',
-      caption: 'Power system'
-    },
-    {
-      src: '/images/Portfolio/Spot Payload/Buck-Boost_12V_v1_1920x1080.png',
-      alt: 'Power subsystem Buck-Boost 12V module',
-      caption: 'Control module'
-    }
-  ];
-
   return (
-    <div className="spot-page min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <a
               href="/"
-              className="flex items-center gap-3 text-lg font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-300"
+              className="flex items-center gap-3 text-lg font-playfair text-gray-900 hover:text-gray-600 transition-colors duration-300"
             >
               <img 
                 src="/images/Landing Page Graphics/logo.png" 
@@ -113,139 +63,254 @@ const SpotPage = () => {
       </nav>
 
       <div className="pt-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
           
-          {/* Hero Card */}
-          <SpotCard 
-            ref={addToRevealRefs}
-            className="spot-reveal"
+          {/* Hero Band - Edge-to-edge rounded card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="mx-4 md:mx-8 lg:mx-12"
           >
-            <div className="spot-image-container">
-              <img
-                src="/images/Portfolio/Spot Payload/spot_full_assembly_1920x1080.png"
-                alt="Boston Dynamics Spot robot with integrated sensor payload assembly"
-              />
-              <SpotOverlay>
-                <SpotPill>AMRL Project</SpotPill>
-                <h1>Boston Dynamics Spot</h1>
-                <h2 style={{ color: 'var(--accent-spot)' }}>Perception & Control</h2>
-                <p className="text-sm opacity-90 max-w-md">
+            <RoundedCard
+              imageSrc="/images/Portfolio/Spot Payload/spot_full_assembly_1920x1080.png"
+              alt="Boston Dynamics Spot robot with integrated sensor payload assembly"
+              badge="AMRL Project"
+            >
+              <div className="max-w-2xl">
+                <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
+                  Boston Dynamics Spot
+                </h1>
+                <h2 className="font-playfair text-2xl md:text-3xl font-semibold mb-6 text-brand-accent">
+                  Perception & Control
+                </h2>
+                <p className="font-inter text-lg opacity-90 mb-8">
                   We integrated LiDAR, depth, and stereo vision on a stabilized payload and brought up perception and control on Spot for field testing.
                 </p>
-              </SpotOverlay>
+                <motion.button
+                  className="bg-brand-accent hover:bg-brand-accent200 text-gray-900 font-medium px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  View Gallery
+                </motion.button>
+              </div>
+            </RoundedCard>
+          </motion.div>
+
+          {/* Three-card strip */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          >
+            <RoundedCard
+              imageSrc="/images/Portfolio/Spot Payload/Spot_Walking.png"
+              alt="Spot robot in operational testing"
+              badge="Sensors"
+            >
+              <h3 className="font-playfair text-2xl font-bold mb-2">Proven Field Testing</h3>
+              <p className="font-inter text-sm opacity-90">
+                On-robot runs with wiring cleanup and stability validation in real-world conditions.
+              </p>
+            </RoundedCard>
+
+            <RoundedCard
+              imageSrc="/images/Portfolio/Spot Payload/velodyne-vlp16 v1_1920x1080.png"
+              alt="Velodyne VLP-16 LiDAR sensor integration"
+              badge="Perception"
+            >
+              <h3 className="font-playfair text-2xl font-bold mb-2">Sensor Fusion</h3>
+              <p className="font-inter text-sm opacity-90">
+                LiDAR + depth + RGB integration for comprehensive environmental perception.
+              </p>
+            </RoundedCard>
+
+            <RoundedCard
+              imageSrc="/images/Portfolio/Spot Payload/top_lvl_p3737_01142022_1920x1080.png"
+              alt="Top-level board assembly showing modular design"
+              badge="Controls"
+            >
+              <h3 className="font-playfair text-2xl font-bold mb-2">Designed for Modularity</h3>
+              <p className="font-inter text-sm opacity-90">
+                Quick-swap mounts and payload stability for rapid field deployment.
+              </p>
+            </RoundedCard>
+          </motion.div>
+
+          {/* Wide feature block */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="mx-4 md:mx-8 lg:mx-12"
+          >
+            <RoundedCard
+              imageSrc="/images/Portfolio/Spot Payload/Battery_Holder_v6_1920x1080.png"
+              alt="Battery and adapter subsystem design showing modular architecture"
+              badge="Architecture"
+            >
+              <div className="max-w-2xl">
+                <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4">
+                  Proven Autonomy. Scalable Deployment.
+                </h2>
+                <p className="font-inter text-lg opacity-90 mb-6">
+                  The team iterated mounts in Fusion, balanced the payload, and cleaned wiring after each run. 
+                  Our modular hardware architecture enables rapid payload swaps for different operational scenarios.
+                </p>
+                <motion.button
+                  className="bg-brand-accent hover:bg-brand-accent200 text-gray-900 font-medium px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Learn More
+                </motion.button>
+              </div>
+            </RoundedCard>
+          </motion.div>
+
+          {/* Gallery carousel */}
+          <motion.div
+            id="gallery"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="space-y-8"
+          >
+            <div className="text-center">
+              <SectionTitle>Project Gallery</SectionTitle>
+              <p className="font-inter text-lg text-gray-600 mt-4">
+                See the Spot robot in action with integrated sensor payload
+              </p>
             </div>
-          </SpotCard>
 
-          {/* Three Feature Cards */}
-          <div 
-            ref={addToRevealRefs}
-            className="spot-reveal spot-grid spot-grid--3-col"
-          >
-            <SpotCard>
-              <div className="spot-image-container">
-                <img
-                  src="/images/Portfolio/Spot Payload/Spot_Walking.png"
-                  alt="Spot robot in operational testing"
-                  loading="lazy"
-                />
-                <SpotOverlay>
-                  <h3>Proven Field Testing</h3>
-                  <p className="text-sm opacity-90">
-                    On-robot runs with wiring cleanup and stability validation in real-world conditions.
-                  </p>
-                </SpotOverlay>
-              </div>
-            </SpotCard>
-
-            <SpotCard>
-              <div className="spot-image-container">
-                <img
-                  src="/images/Portfolio/Spot Payload/velodyne-vlp16 v1_1920x1080.png"
-                  alt="Velodyne VLP-16 LiDAR sensor integration"
-                  loading="lazy"
-                />
-                <SpotOverlay>
-                  <h3>Sensor Fusion</h3>
-                  <p className="text-sm opacity-90">
-                    LiDAR + depth + RGB integration for comprehensive environmental perception.
-                  </p>
-                </SpotOverlay>
-              </div>
-            </SpotCard>
-
-            <SpotCard>
-              <div className="spot-image-container">
-                <img
-                  src="/images/Portfolio/Spot Payload/top_lvl_p3737_01142022_1920x1080.png"
-                  alt="Top-level board assembly showing modular design"
-                  loading="lazy"
-                />
-                <SpotOverlay>
-                  <h3>Designed for Modularity</h3>
-                  <p className="text-sm opacity-90">
-                    Quick-swap mounts and payload stability for rapid field deployment.
-                  </p>
-                </SpotOverlay>
-              </div>
-            </SpotCard>
-          </div>
-
-          {/* Gallery Card */}
-          <SpotCard 
-            ref={addToRevealRefs}
-            className="spot-reveal"
-          >
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-6">Project Gallery</h3>
-              <SpotGallery images={galleryImages} />
-            </div>
-          </SpotCard>
-
-          {/* Highlights Card */}
-          <SpotCard 
-            ref={addToRevealRefs}
-            className="spot-reveal"
-          >
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-6">Key Highlights</h3>
-              <div className="spot-highlights">
-                <div className="spot-highlight-item">
-                  <div className="spot-highlight-bullet"></div>
-                  <p>CAD design & mechanical integration using Fusion 360</p>
-                </div>
-                <div className="spot-highlight-item">
-                  <div className="spot-highlight-bullet"></div>
-                  <p>Sensor fusion LiDAR + RGB + Depth cameras</p>
-                </div>
-                <div className="spot-highlight-item">
-                  <div className="spot-highlight-bullet"></div>
-                  <p>Modular hardware architecture for rapid payload swaps</p>
-                </div>
-                <div className="spot-highlight-item">
-                  <div className="spot-highlight-bullet"></div>
-                  <p>Field testing and system iteration by the multidisciplinary team</p>
-                </div>
+            {/* Horizontal scroll gallery */}
+            <div className="overflow-x-auto scrollbar-hide snap-x snap-mandatory">
+              <div className="flex space-x-6 pb-4" style={{ width: 'max-content' }}>
+                {[
+                  {
+                    src: '/images/Portfolio/Spot Payload/Dual_Zed_Mount_v1_1920x1080.png',
+                    alt: 'Sensor mount bracket design in Fusion 360',
+                    caption: 'Payload bracket'
+                  },
+                  {
+                    src: '/images/Portfolio/Spot Payload/ZEDLink_Duo_Rev1_1920x1080.png',
+                    alt: 'ZEDLink Duo sensor mount revision',
+                    caption: 'Sensor alignment'
+                  },
+                  {
+                    src: '/images/Portfolio/Spot Payload/Buck-Boost_12V_v1_1920x1080.png',
+                    alt: 'Power subsystem Buck-Boost 12V module',
+                    caption: 'Control module'
+                  },
+                  {
+                    src: '/images/Portfolio/Spot Payload/Spot_Deployement_Testing.mp4',
+                    alt: 'Spot deployment testing video',
+                    caption: 'Field testing'
+                  }
+                ].map((item, index) => (
+                  <div key={index} className="snap-center flex-shrink-0">
+                    <div className="w-80 h-48 rounded-3xl overflow-hidden shadow-soft group">
+                      {item.src.endsWith('.mp4') ? (
+                        <video
+                          src={item.src}
+                          className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-95 group-hover:scale-105"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
+                      ) : (
+                        <img
+                          src={item.src}
+                          alt={item.alt}
+                          className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-95 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      )}
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                        <p className="text-white text-sm font-medium">{item.caption}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          </SpotCard>
 
-          {/* Next Steps Card */}
-          <SpotCard 
-            ref={addToRevealRefs}
-            className="spot-reveal"
+            {/* Scroll cue */}
+            <div className="flex justify-center">
+              <div className="flex space-x-2">
+                <div className="w-2 h-2 bg-brand-accent rounded-full"></div>
+                <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+                <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Key Highlights */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="bg-gray-50 rounded-4xl p-8 md:p-12"
           >
-            <div className="p-6 text-center">
-              <h3 className="text-xl font-semibold mb-4">Next Steps</h3>
-              <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4">Key Highlights</h2>
+              <p className="font-inter text-lg text-gray-600">What we accomplished</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {[
+                "CAD design & mechanical integration using Fusion 360",
+                "Sensor fusion LiDAR + RGB + Depth cameras",
+                "Modular hardware architecture for rapid payload swaps",
+                "Field testing and system iteration by the multidisciplinary team"
+              ].map((highlight, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="flex items-start space-x-4"
+                >
+                  <div className="w-3 h-3 rounded-full bg-brand-accent mt-2 flex-shrink-0"></div>
+                  <p className="font-inter text-gray-700">{highlight}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Next Steps */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-center"
+          >
+            <div className="bg-white rounded-4xl p-8 md:p-12 shadow-soft">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6">Next Steps</h2>
+              <p className="font-inter text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
                 The next phase will focus on enabling full autonomy using the integrated sensor suite, 
                 refining the hardware platform for field-deployable ruggedness, and enabling rapid 
                 sensor payload changes in real world warehouse and logistics applications.
               </p>
-              <button className="spot-button">
+              <motion.button
+                className="bg-brand-accent hover:bg-brand-accent200 text-gray-900 font-medium px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Contact me
-              </button>
+              </motion.button>
             </div>
-          </SpotCard>
+          </motion.div>
 
         </div>
       </div>
@@ -253,7 +318,7 @@ const SpotPage = () => {
       {/* Footer */}
       <footer className="bg-white py-12 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-gray-600 text-sm">
+          <p className="font-inter text-gray-600 text-sm">
             © 2024 Kashf Siddiqui
           </p>
         </div>
