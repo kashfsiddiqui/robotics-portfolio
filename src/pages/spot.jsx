@@ -220,7 +220,7 @@ const SpotPage = () => {
                   }
                 ].map((item, index) => (
                   <div key={index} className="snap-center flex-shrink-0">
-                    <div className="w-80 h-48 rounded-3xl overflow-hidden shadow-soft group">
+                    <div className="relative w-80 h-48 rounded-3xl overflow-hidden shadow-soft group">
                       {item.src.endsWith('.mp4') ? (
                         <video
                           src={item.src}
