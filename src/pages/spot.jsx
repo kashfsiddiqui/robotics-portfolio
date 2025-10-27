@@ -149,28 +149,33 @@ const SpotPage = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="mx-4 md:mx-8 lg:mx-12"
           >
-            <RoundedCard
-              imageSrc="/images/Portfolio/Spot Payload/Battery_Holder_v6_1920x1080.png"
-              alt="Battery and adapter subsystem design showing modular architecture"
-              badge="Architecture"
-            >
-              <div className="max-w-2xl">
-                <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4">
+            <div className="relative rounded-4xl overflow-hidden shadow-lg">
+              <video
+                src="/images/Portfolio/Spot Payload/Spot_Deployement_Testing.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover rounded-4xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent flex flex-col justify-end p-8">
+                <span className="uppercase text-sm text-brand-accent200 tracking-wider mb-2">Architecture</span>
+                <h2 className="font-playfair text-4xl font-semibold text-white leading-tight">
                   Proven Autonomy. Scalable Deployment.
                 </h2>
-                <p className="font-inter text-lg opacity-90 mb-6">
-                  The team iterated mounts in Fusion, balanced the payload, and cleaned wiring after each run. 
-                  Our modular hardware architecture enables rapid payload swaps for different operational scenarios.
+                <p className="mt-3 text-gray-200 max-w-2xl">
+                  The team iterated mounts in Fusion, balanced the payload, and cleaned wiring after each run. Our modular hardware architecture enables rapid payload swaps for different operational scenarios.
                 </p>
                 <motion.button
-                  className="bg-brand-accent hover:bg-brand-accent200 text-gray-900 font-medium px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+                  onClick={() => document.getElementById('design-insights')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="mt-6 bg-brand-accent text-gray-900 px-6 py-2 rounded-full font-medium hover:bg-brand-accent200 transition"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Learn More
                 </motion.button>
               </div>
-            </RoundedCard>
+            </div>
           </motion.div>
 
           {/* Gallery carousel */}
@@ -209,9 +214,9 @@ const SpotPage = () => {
                     caption: 'Control module'
                   },
                   {
-                    src: '/images/Portfolio/Spot Payload/Spot_Deployement_Testing.mp4',
-                    alt: 'Spot deployment testing video',
-                    caption: 'Field testing'
+                    src: '/images/Portfolio/Spot Payload/Battery_Holder_v6_1920x1080.png',
+                    alt: 'Battery Holder CAD design',
+                    caption: 'Power system'
                   }
                 ].map((item, index) => (
                   <div key={index} className="snap-center flex-shrink-0">
@@ -251,6 +256,24 @@ const SpotPage = () => {
               </div>
             </div>
           </motion.div>
+
+          {/* Design Insights Section */}
+          <motion.section
+            id="design-insights"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="rounded-3xl shadow-md bg-gray-50 px-10 py-16 mt-16 text-center"
+          >
+            <h2 className="font-playfair text-3xl mb-4 text-gray-900">Design Insights</h2>
+            <p className="max-w-3xl mx-auto text-gray-600 leading-relaxed">
+              Developing Spot's payload architecture required balancing perception and control within strict stability limits.
+              Each iteration in Fusion refined mounting geometry, center-of-mass offset, and cable routing to optimize both field
+              performance and modularity. Thermal management and sensor alignment were continuously validated through real-world
+              tests to ensure reliability under dynamic load conditions.
+            </p>
+          </motion.section>
 
           {/* Key Highlights */}
           <motion.div
@@ -303,6 +326,7 @@ const SpotPage = () => {
                 sensor payload changes in real world warehouse and logistics applications.
               </p>
               <motion.button
+                onClick={() => window.location.href = "mailto:kashfsiddiqui@utexas.edu"}
                 className="bg-brand-accent hover:bg-brand-accent200 text-gray-900 font-medium px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
