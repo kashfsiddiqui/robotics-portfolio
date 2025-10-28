@@ -42,16 +42,6 @@ const Projects = ({ onSpotClick, onCobotClick }) => {
         },
     {
       type: "project",
-      title: "AMRL Cobot Arm Manipulation & Coordination",
-      subtitle: "AMRL • Robotics • Control",
-      description: "Designed and simulated multi-axis control system for collaborative robot arm using sensor feedback.",
-      image: "/images/Landing Page Graphics/amrl_cobot.png",
-      bgColor: "bg-green-100",
-      gridSpan: "col-span-1 row-span-1",
-      mobileSpan: "col-span-1 row-span-1"
-    },
-    {
-      type: "project",
       title: "HCRL Draco 3 Bipedal Robot Planning",
       subtitle: "HCRL • Motion Planning • Control",
       description: "Developed and tested reinforcement-learning-based gait planning for humanoid robot in simulation.",
