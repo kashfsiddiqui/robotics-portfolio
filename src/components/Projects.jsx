@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-const Projects = ({ onSpotClick }) => {
+const Projects = ({ onSpotClick, onCobotClick }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px", amount: 0.2 });
 
@@ -17,18 +17,29 @@ const Projects = ({ onSpotClick }) => {
       gridSpan: "col-span-2 row-span-2",
       mobileSpan: "col-span-2 row-span-2"
     },
-    // Project blocks in new specified order
-    {
-      type: "project",
-      title: "Boston Dynamics Spot Perception & Control",
-      subtitle: "AMRL • LiDAR • Perception",
-      description: "Enhanced Spot's perception and control systems with LiDAR, depth, and camera integration.",
-      image: "/images/Landing Page Graphics/amrl_spot.png",
-      bgColor: "bg-blue-100",
-      gridSpan: "col-span-1 row-span-1",
-      mobileSpan: "col-span-1 row-span-1",
-      link: "/portfolio/spot"
-    },
+        // Project blocks in new specified order
+        {
+          type: "project",
+          title: "Boston Dynamics Spot Perception & Control",
+          subtitle: "AMRL • LiDAR • Perception",
+          description: "Enhanced Spot's perception and control systems with LiDAR, depth, and camera integration.",
+          image: "/images/Landing Page Graphics/amrl_spot.png",
+          bgColor: "bg-blue-100",
+          gridSpan: "col-span-1 row-span-1",
+          mobileSpan: "col-span-1 row-span-1",
+          link: "/portfolio/spot"
+        },
+        {
+          type: "project",
+          title: "UT Indoor Cobot Perception & HRI",
+          subtitle: "UT • Localization • HRI",
+          description: "Developed modular cobot platform for indoor localization, perception, and human-robot interaction research.",
+          image: "/images/Landing Page Graphics/amrl_cobot.png",
+          bgColor: "bg-green-100",
+          gridSpan: "col-span-1 row-span-1",
+          mobileSpan: "col-span-1 row-span-1",
+          link: "/portfolio/cobot"
+        },
     {
       type: "project",
       title: "AMRL Cobot Arm Manipulation & Coordination",
@@ -216,6 +227,8 @@ const Projects = ({ onSpotClick }) => {
                 onClick={item.type === "project" && item.link ? () => {
                   if (item.link === "/portfolio/spot" && onSpotClick) {
                     onSpotClick();
+                  } else if (item.link === "/portfolio/cobot" && onCobotClick) {
+                    onCobotClick();
                   } else {
                     window.location.href = item.link;
                   }

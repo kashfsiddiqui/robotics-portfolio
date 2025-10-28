@@ -7,8 +7,13 @@ export const RoundedCard = ({
   children, 
   badge, 
   className = "",
+  colorScheme = "brand",
   ...props 
 }) => {
+  const badgeClasses = colorScheme === "cobot" 
+    ? "bg-cobot-accent200 text-cobot-accent600"
+    : "bg-brand-accent200 text-brand-accent600";
+    
   return (
     <motion.div
       className={`group relative overflow-hidden rounded-4xl shadow-soft ${className}`}
@@ -29,7 +34,7 @@ export const RoundedCard = ({
       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6">
         {badge && (
           <div className="mb-3">
-            <span className="inline-block px-3 py-1 text-xs font-medium uppercase tracking-wide bg-brand-accent200 text-brand-accent600 rounded-full">
+            <span className={`inline-block px-3 py-1 text-xs font-medium uppercase tracking-wide rounded-full ${badgeClasses}`}>
               {badge}
             </span>
           </div>

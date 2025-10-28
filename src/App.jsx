@@ -5,6 +5,7 @@ import Projects from './components/Projects';
 import Footer from './components/Footer';
 import SpotProject from './components/SpotProject';
 import SpotPage from './pages/spot';
+import CobotPage from './pages/cobot';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -15,6 +16,8 @@ function App() {
       const path = window.location.pathname;
       if (path === '/portfolio/spot') {
         setCurrentPage('spot');
+      } else if (path === '/portfolio/cobot') {
+        setCurrentPage('cobot');
       } else {
         setCurrentPage('home');
       }
@@ -37,6 +40,11 @@ function App() {
     setCurrentPage('spot');
   };
 
+  const navigateToCobot = () => {
+    window.history.pushState({}, '', '/portfolio/cobot');
+    setCurrentPage('cobot');
+  };
+
   // Handle back navigation
   const navigateToHome = () => {
     window.history.pushState({}, '', '/');
@@ -47,11 +55,15 @@ function App() {
     return <SpotPage />;
   }
 
+  if (currentPage === 'cobot') {
+    return <CobotPage />;
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
       <Hero />
-      <Projects onSpotClick={navigateToSpot} />
+      <Projects onSpotClick={navigateToSpot} onCobotClick={navigateToCobot} />
       <Footer />
     </div>
   );

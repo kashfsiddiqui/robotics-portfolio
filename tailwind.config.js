@@ -14,6 +14,12 @@ export default {
           accent50: '#FAE5D8',
           accent200: '#F3C7A8',
           accent600: '#E59F70'
+        },
+        cobot: {
+          accent: '#4ADE80', // green accent for Cobot page
+          accent50: '#F0FDF4',
+          accent200: '#BBF7D0',
+          accent600: '#16A34A'
         }
       },
       fontFamily: {
