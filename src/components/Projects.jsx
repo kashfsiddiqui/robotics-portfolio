@@ -78,7 +78,8 @@ const Projects = ({ onSpotClick, onCobotClick }) => {
       image: "/images/Landing Page Graphics/guadaloop_bogie.png",
       bgColor: "bg-orange-100",
       gridSpan: "col-span-1 row-span-1",
-      mobileSpan: "col-span-1 row-span-1"
+      mobileSpan: "col-span-1 row-span-1",
+      link: "/portfolio/guadaloop"
     },
     {
       type: "project",
@@ -217,6 +218,8 @@ const Projects = ({ onSpotClick, onCobotClick }) => {
                 onClick={item.type === "project" && item.link ? () => {
                   if (item.link === "/portfolio/spot" && onSpotClick) {
                     onSpotClick();
+                  } else if (item.link === "/portfolio/guadaloop") {
+                    window.location.href = item.link;
                   } else if (item.link === "/portfolio/cobot" && onCobotClick) {
                     onCobotClick();
                   } else {

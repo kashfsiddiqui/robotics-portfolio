@@ -56,8 +56,8 @@ generate_commits() {
     
     echo "🚀 Starting GitHub contribution automation..."
     echo "📅 Date range: $start_date to $end_date"
-    echo "⏰ Commits will be timestamped around 12:00 PM (±5 minutes)"
-    echo "🎲 Daily commits: 1-3 per day (randomized)"
+    echo "⏰ Commits timestamped around 12:00 PM (±5–60 minutes)"
+    echo "🎲 Daily activity: 70% active days; on active days 1–3 commits (60/30/10%)"
     echo ""
     
     # Convert dates to seconds for iteration
@@ -97,8 +97,21 @@ generate_commits() {
         commit_date=$(format_date $current_epoch)
         formatted_date=$(format_date_display $current_epoch)
         
-        # Generate random number of commits for this day (1-3)
-        commits_today=$(random_between 1 3)
+        # Decide if today is active (70% chance)
+        active_roll=$((RANDOM % 100))
+        if [ $active_roll -lt 70 ]; then
+            # Active day: decide number of commits based on weighted chances
+            weight_roll=$((RANDOM % 100))
+            if [ $weight_roll -lt 60 ]; then
+                commits_today=1
+            elif [ $weight_roll -lt 90 ]; then
+                commits_today=2
+            else
+                commits_today=3
+            fi
+        else
+            commits_today=0
+        fi
         
         # Progress indicator
         echo "📝 Day $current_day/$days - $commit_date - $commits_today commits"
@@ -106,7 +119,20 @@ generate_commits() {
         # Generate commits for this day
         for ((i=1; i<=commits_today; i++)); do
             # Generate random time offset (±5 minutes)
-            time_offset=$(random_time_offset)
+            # Expand to ±5–60 minutes
+            # choose range edge: 0 => 5-30, 1 => 30-60
+            range_pick=$((RANDOM % 2))
+            if [ $range_pick -eq 0 ]; then
+                base_offset=$(random_between 5 30)
+            else
+                base_offset=$(random_between 30 60)
+            fi
+            sign=$((RANDOM % 2))
+            if [ $sign -eq 0 ]; then
+                time_offset=$((-1 * base_offset))
+            else
+                time_offset=$base_offset
+            fi
             
             # Calculate commit time (12:00 PM + offset)
             commit_hour=12
@@ -125,7 +151,14 @@ generate_commits() {
             commit_time=$(printf "%02d:%02d:00" $commit_hour $commit_minute)
             
             # Generate commit message
-            commit_msg="feat(page): added design insights and video updates on $formatted_date"
+            # Randomize commit message from pool
+            case $((RANDOM % 5)) in
+              0) commit_msg="feat(page): refine layout for Guadaloop project";;
+              1) commit_msg="fix(content): update CAD image alignment";;
+              2) commit_msg="style(ui): tweak beige accent color";;
+              3) commit_msg="chore(build): sync deployment config";;
+              4) commit_msg="docs(portfolio): add Guadaloop Dynamics context";;
+            esac
             
             # Set git environment variables for timestamping
             export GIT_AUTHOR_DATE="${commit_date}T${commit_time}"

@@ -20,6 +20,12 @@ export default {
           accent50: '#F0FDF4',
           accent200: '#BBF7D0',
           accent600: '#16A34A'
+        },
+        guada: {
+          accent: '#E9DCCB', // beige accent for Guadaloop page (soft warm beige)
+          accent50: '#F7F3EB',
+          accent200: '#E2D3BF',
+          accent600: '#C6B39A'
         }
       },
       fontFamily: {

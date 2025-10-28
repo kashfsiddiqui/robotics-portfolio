@@ -10,9 +10,12 @@ export const RoundedCard = ({
   colorScheme = "brand",
   ...props 
 }) => {
-  const badgeClasses = colorScheme === "cobot" 
-    ? "bg-cobot-accent200 text-cobot-accent600"
-    : "bg-brand-accent200 text-brand-accent600";
+  let badgeClasses = "bg-brand-accent200 text-brand-accent600";
+  if (colorScheme === "cobot") {
+    badgeClasses = "bg-cobot-accent200 text-cobot-accent600";
+  } else if (colorScheme === "guada") {
+    badgeClasses = "bg-guada-accent200 text-guada-accent600";
+  }
     
   return (
     <motion.div

@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import SpotProject from './components/SpotProject';
 import SpotPage from './pages/spot';
 import CobotPage from './pages/cobot';
+import GuadaloopPage from './pages/guadaloop';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -16,6 +17,8 @@ function App() {
       const path = window.location.pathname;
       if (path === '/portfolio/spot') {
         setCurrentPage('spot');
+      } else if (path === '/portfolio/guadaloop') {
+        setCurrentPage('guadaloop');
       } else if (path === '/portfolio/cobot') {
         setCurrentPage('cobot');
       } else {
@@ -57,6 +60,10 @@ function App() {
 
   if (currentPage === 'cobot') {
     return <CobotPage />;
+  }
+
+  if (currentPage === 'guadaloop') {
+    return <GuadaloopPage />;
   }
 
   return (
