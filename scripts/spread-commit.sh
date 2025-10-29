@@ -51,12 +51,12 @@ format_date_display() {
 
 # Function to generate commits for a date range
 generate_commits() {
-    local start_date="2024-10-30"
+    local start_date="2025-01-01"
     local end_date="2025-10-30"
     
     echo "🚀 Starting GitHub contribution automation..."
     echo "📅 Date range: $start_date to $end_date"
-    echo "⏰ Commits timestamped around 12:00 PM (±5–60 minutes)"
+    echo "⏰ Commits timestamped around 12:00 PM (±5–60 minutes); ~90 min between same-day commits"
     echo "🎲 Daily activity: 70% active days; on active days 1–3 commits (60/30/10%)"
     echo ""
     
@@ -81,8 +81,8 @@ generate_commits() {
         exit 1
     fi
     
-    # Calculate number of days (exclusive end, target 365)
-    days=$(( (end_epoch - start_epoch) / 86400 ))
+    # Calculate number of days (inclusive end)
+    days=$(( (end_epoch - start_epoch) / 86400 + 1 ))
     echo "📊 Total days to process: $days"
     echo ""
     
@@ -92,25 +92,31 @@ generate_commits() {
     
     # Iterate through each day
     current_epoch=$start_epoch
-    while [ $current_epoch -lt $end_epoch ]; do
+    while [ $current_epoch -le $end_epoch ]; do
         # Format the date
         commit_date=$(format_date $current_epoch)
         formatted_date=$(format_date_display $current_epoch)
         
-        # Decide if today is active (70% chance)
-        active_roll=$((RANDOM % 100))
-        if [ $active_roll -lt 70 ]; then
-            # Active day: decide number of commits based on weighted chances
-            weight_roll=$((RANDOM % 100))
-            if [ $weight_roll -lt 60 ]; then
-                commits_today=1
-            elif [ $weight_roll -lt 90 ]; then
-                commits_today=2
-            else
-                commits_today=3
-            fi
-        else
+        # Idempotent skip: if there is already any commit for this author-date day, skip
+        if git log --since="${commit_date} 00:00:00" --until="${commit_date} 23:59:59" --format="%ad" --date=short | grep -q "^${commit_date}$"; then
             commits_today=0
+            echo "🟨 Skipping ${commit_date} (already has commits)"
+        else
+            # Decide if today is active (70% chance)
+            active_roll=$((RANDOM % 100))
+            if [ $active_roll -lt 70 ]; then
+                # Active day: decide number of commits based on weighted chances
+                weight_roll=$((RANDOM % 100))
+                if [ $weight_roll -lt 60 ]; then
+                    commits_today=1
+                elif [ $weight_roll -lt 90 ]; then
+                    commits_today=2
+                else
+                    commits_today=3
+                fi
+            else
+                commits_today=0
+            fi
         fi
         
         # Progress indicator
@@ -135,6 +141,10 @@ generate_commits() {
             else
                 time_offset=$base_offset
             fi
+
+            # Spread multi-commit days by ~90 minutes between commits
+            additional_offset=$(( (i - 1) * 90 ))
+            time_offset=$(( time_offset + additional_offset ))
             
             # Calculate commit time (12:00 PM + offset)
             commit_hour=12
@@ -153,13 +163,13 @@ generate_commits() {
             commit_time=$(printf "%02d:%02d:00" $commit_hour $commit_minute)
             
             # Generate commit message
-            # Randomize commit message from pool (Hyperloop Dynamics)
+            # Randomize commit message from pool (portfolio scoped)
             case $((RANDOM % 5)) in
-              0) commit_msg="feat(page): refine layout for Hyperloop Dynamics";;
-              1) commit_msg="fix(content): reorder CAD gallery sequence";;
-              2) commit_msg="style(ui): adjust beige accent color balance";;
-              3) commit_msg="chore(build): update spread start date and tracker";;
-              4) commit_msg="docs(portfolio): refresh Hyperloop visuals and metadata";;
+              0) commit_msg="feat(page): add content updates";;
+              1) commit_msg="fix(content): adjust gallery ordering";;
+              2) commit_msg="style(ui): spacing and typography polish";;
+              3) commit_msg="chore(build): deployment config sync";;
+              4) commit_msg="docs(portfolio): note design iteration";;
             esac
             
             # Set git environment variables for timestamping
@@ -189,8 +199,26 @@ generate_commits() {
     
     echo ""
     echo "🎉 Successfully generated $total_commits commits across $days days!"
-    echo "✅ Commits successfully spread across 2024-10-28 → 2025-10-28"
-    echo "📈 Your GitHub contribution graph should now show activity from $start_date to $end_date"
+    echo "✅ Commits successfully spread across $start_date → $end_date"
+    echo "📈 Your GitHub contribution graph should now show activity across 2025"
+    
+    # Push to default branch remotes if available
+    if git remote | grep -q "^origin$"; then
+      git push origin HEAD:master --quiet || true
+    fi
+    if git remote | grep -q "^kashf-robotics$"; then
+      git push kashf-robotics HEAD:master --quiet || true
+    fi
+    
+    echo ""
+    echo "Run instructions:"
+    echo "chmod +x scripts/spread-commit.sh"
+    echo "./scripts/spread-commit.sh \"feat(page): portfolio iteration\""
+    echo ""
+    echo "Verify commits:"
+    echo "git log --since=\"2025-01-01\" --until=\"2025-10-30\" --format=\"%h %ad %s\" --date=short"
+    echo ""
+    echo "Reminder: 2024 greens appear under the 2024 tab; this backfill populates 2025."
     echo ""
     echo "🚀 To push to GitHub, run:"
     echo "   git push origin master"
