@@ -72,7 +72,7 @@ const GuadaloopPage = () => {
             className="mx-4 md:mx-8 lg:mx-12"
           >
             <RoundedCard
-              imageSrc="/images/Portfolio/Hyperloop Dynamics/pod full CAD.png"
+              imageSrc="/images/Portfolio/Hyperloop Dynamics/CDR Bogie 1.PNG"
               alt="Hyperloop pod full CAD render showing bogie suspension and controls"
               badge="GUADALOOP"
               colorScheme="guada"
@@ -112,20 +112,22 @@ const GuadaloopPage = () => {
           >
             <div className="prose max-w-4xl mx-auto font-inter">
               <p className="text-gray-700 leading-relaxed">
-                My team was part of Texas Guadaloop, working on the suspension and braking systems for the Hyperloop pod. Our pod underwent a major design shift this year — flipping its orientation upside down, requiring a full redesign of the bogie suspension and braking system.
+                My team was part of Texas Guadaloop, focusing on the suspension and braking systems for our Hyperloop pod. This year, the design underwent a major change that flipped the pod’s orientation upside down, which required a complete redesign of the bogie suspension and braking system.
               </p>
               <p className="text-gray-700 leading-relaxed mt-4">
-                We developed an emergency pneumatic braking system and a stability mechanism using polypropylene wheels to maintain pod orientation during magnetic sway. The system was designed around cost efficiency — our $500 budget covered only critical pneumatic components, valves, sensors, and calipers. We solved two failure modes: electrical and pneumatic, through redundant hardware and control logic.
+                We designed an emergency pneumatic braking mechanism and a stability system that uses polypropylene wheels to maintain correct pod orientation during magnetic sway. Because of a $500 project budget, we had to engineer around cost and reuse existing hardware to meet performance and safety goals.
               </p>
               <p className="text-gray-700 leading-relaxed mt-4">
-                To make this possible, we:
-                (1) Recycled pneumatic parts from our first levitating pod (Furiosa 2017), saving over $115,000 in component costs.
-                (2) Secured a sponsorship from W.C. Branham for four spring-applied calipers valued at $12,000.
-                (3) Implemented a spring-applied pneumatic-release mechanism for fail-safe braking during pneumatic failure.
-                (4) Integrated a normally-closed solenoid valve tied to LV power — ensuring automatic braking even in total power loss.
+                To make the system both functional and reliable, we:
               </p>
+              <ul className="text-gray-700 leading-relaxed mt-2 list-disc pl-6">
+                <li>Reused pneumatic parts from our first levitating pod (Furiosa 2017), saving more than $115,000 in hardware.</li>
+                <li>Secured a sponsorship from W.C. Branham for four spring-applied calipers valued at $12,000.</li>
+                <li>Used spring-applied pneumatic-release calipers to ensure braking capability even in the event of pneumatic failure.</li>
+                <li>Integrated a normally closed solenoid valve tied to low-voltage power, ensuring automatic braking in case of total power loss.</li>
+              </ul>
               <p className="text-gray-700 leading-relaxed mt-4">
-                Each design iteration was validated through SolidWorks modeling and 50+ ANSYS simulations, improving pod stability by 15% and supporting our Euro Hyperloop Week 2025 design entry.
+                Each design iteration was modeled in SolidWorks and validated with over 50 ANSYS simulations. These refinements improved pod stability by 15 percent and prepared the design for Euro Hyperloop Week 2025.
               </p>
             </div>
           </motion.section>
@@ -149,10 +151,11 @@ const GuadaloopPage = () => {
             <div className="overflow-x-auto scrollbar-hide snap-x snap-mandatory">
               <div className="flex space-x-6 pb-4" style={{ width: 'max-content' }}>
                 {[
-                  { src: '/images/Portfolio/Hyperloop Dynamics/chassis.png', alt: 'Chassis CAD model', caption: 'Chassis CAD' },
-                  { src: '/images/Portfolio/Hyperloop Dynamics/track.png', alt: 'Track detail CAD', caption: 'Track detail' },
-                  { src: '/images/Portfolio/Hyperloop Dynamics/motor.png', alt: 'Motor subsystem CAD', caption: 'Motor subsystem' },
-                  { src: '/images/Portfolio/Hyperloop Dynamics/braking.png', alt: 'Braking subsystem CAD', caption: 'Braking subsystem' },
+                  { src: '/images/Portfolio/Hyperloop Dynamics/new track assembly.PNG', alt: 'New track assembly CAD view', caption: 'Track assembly' },
+                  { src: '/images/Portfolio/Hyperloop Dynamics/Linear Induction Motor (LIM) CAD.png', alt: 'Linear Induction Motor CAD model', caption: 'LIM CAD' },
+                  { src: '/images/Portfolio/Hyperloop Dynamics/CAD of Lateral Wheels.png', alt: 'Lateral wheels assembly CAD', caption: 'Lateral wheels' },
+                  { src: '/images/Portfolio/Hyperloop Dynamics/CAD of braking board and vertical wheels.png', alt: 'Braking board and vertical wheels CAD', caption: 'Braking + vertical wheels' },
+                  { src: '/images/Portfolio/Hyperloop Dynamics/Chassis Lower (Bogie) CAD.png', alt: 'Chassis lower bogie CAD model', caption: 'Chassis lower (bogie)' },
                   { src: '/images/Portfolio/Hyperloop Dynamics/pod full CAD.png', alt: 'Pod full CAD render', caption: 'Pod full CAD' },
                 ].map((item, index) => (
                   <div key={index} className="snap-center flex-shrink-0">
@@ -188,10 +191,10 @@ const GuadaloopPage = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {[
-                "CAD design & mechanical integration for modular sensor mounts",
-                "Fused LiDAR + depth for real-time obstacle mapping",
-                "Calibrated camera FOV and LiDAR alignment for improved localization",
-                "Lightweight, interchangeable links reduce setup time for new tests"
+                "Designed a cost-efficient pneumatic braking system using recycled hardware and sponsor-donated components.",
+                "Modeled and validated bogie suspension geometry through 50+ ANSYS simulations.",
+                "Created modular mechanical mounts for lateral and vertical wheel assemblies.",
+                "Implemented dual-failure redundancy (electrical and pneumatic) for emergency braking."
               ].map((highlight, index) => (
                 <motion.div
                   key={index}
@@ -219,9 +222,7 @@ const GuadaloopPage = () => {
             <div className="bg-white rounded-4xl p-8 md:p-12 shadow-soft">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6">Next Steps</h2>
               <p className="font-inter text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-                Extend autonomous behaviors in cluttered indoor spaces, refine human-robot
-                interaction workflows in the GUI, and evaluate multi-sensor redundancy to
-                harden localization against occlusions and drift.
+                The next phase will focus on finalizing the integrated suspension-braking interface, refining linear induction motor control for smoother magnetic levitation, and validating the system during full pod track runs for Euro Hyperloop Week 2025.
               </p>
               <motion.button
                 onClick={() => window.location.href = "mailto:kashfsiddiqui@utexas.edu"}

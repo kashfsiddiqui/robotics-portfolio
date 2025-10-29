@@ -151,13 +151,13 @@ generate_commits() {
             commit_time=$(printf "%02d:%02d:00" $commit_hour $commit_minute)
             
             # Generate commit message
-            # Randomize commit message from pool
+            # Randomize commit message from pool (Hyperloop Dynamics)
             case $((RANDOM % 5)) in
-              0) commit_msg="feat(page): refine layout for Guadaloop project";;
-              1) commit_msg="fix(content): update CAD image alignment";;
-              2) commit_msg="style(ui): tweak beige accent color";;
-              3) commit_msg="chore(build): sync deployment config";;
-              4) commit_msg="docs(portfolio): add Guadaloop Dynamics context";;
+              0) commit_msg="feat(page): refine layout for Hyperloop Dynamics";;
+              1) commit_msg="fix(content): update bogie CAD and text sections";;
+              2) commit_msg="style(ui): adjust beige accent theme";;
+              3) commit_msg="chore(build): update image paths";;
+              4) commit_msg="docs(portfolio): add Guadaloop project context";;
             esac
             
             # Set git environment variables for timestamping
