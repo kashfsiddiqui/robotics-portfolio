@@ -51,8 +51,8 @@ format_date_display() {
 
 # Function to generate commits for a date range
 generate_commits() {
-    local start_date="2024-10-28"
-    local end_date="2025-10-28"
+    local start_date="2024-10-30"
+    local end_date="2025-10-30"
     
     echo "🚀 Starting GitHub contribution automation..."
     echo "📅 Date range: $start_date to $end_date"
@@ -81,8 +81,8 @@ generate_commits() {
         exit 1
     fi
     
-    # Calculate number of days
-    days=$(( (end_epoch - start_epoch) / 86400 + 1 ))
+    # Calculate number of days (exclusive end, target 365)
+    days=$(( (end_epoch - start_epoch) / 86400 ))
     echo "📊 Total days to process: $days"
     echo ""
     
@@ -92,7 +92,7 @@ generate_commits() {
     
     # Iterate through each day
     current_epoch=$start_epoch
-    while [ $current_epoch -le $end_epoch ]; do
+    while [ $current_epoch -lt $end_epoch ]; do
         # Format the date
         commit_date=$(format_date $current_epoch)
         formatted_date=$(format_date_display $current_epoch)
@@ -115,9 +115,11 @@ generate_commits() {
         
         # Progress indicator
         echo "📝 Day $current_day/$days - $commit_date - $commits_today commits"
+        echo "Day $current_day/$days – $commit_date – [Commits today: $commits_today]"
         
         # Generate commits for this day
         for ((i=1; i<=commits_today; i++)); do
+            echo "   • Generating commit $i/$commits_today for $commit_date"
             # Generate random time offset (±5 minutes)
             # Expand to ±5–60 minutes
             # choose range edge: 0 => 5-30, 1 => 30-60
@@ -154,10 +156,10 @@ generate_commits() {
             # Randomize commit message from pool (Hyperloop Dynamics)
             case $((RANDOM % 5)) in
               0) commit_msg="feat(page): refine layout for Hyperloop Dynamics";;
-              1) commit_msg="fix(content): update bogie CAD and text sections";;
-              2) commit_msg="style(ui): adjust beige accent theme";;
-              3) commit_msg="chore(build): update image paths";;
-              4) commit_msg="docs(portfolio): add Guadaloop project context";;
+              1) commit_msg="fix(content): reorder CAD gallery sequence";;
+              2) commit_msg="style(ui): adjust beige accent color balance";;
+              3) commit_msg="chore(build): update spread start date and tracker";;
+              4) commit_msg="docs(portfolio): refresh Hyperloop visuals and metadata";;
             esac
             
             # Set git environment variables for timestamping

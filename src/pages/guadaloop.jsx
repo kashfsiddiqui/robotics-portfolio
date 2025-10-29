@@ -151,12 +151,11 @@ const GuadaloopPage = () => {
             <div className="overflow-x-auto scrollbar-hide snap-x snap-mandatory">
               <div className="flex space-x-6 pb-4" style={{ width: 'max-content' }}>
                 {[
-                  { src: '/images/Portfolio/Hyperloop Dynamics/new track assembly.PNG', alt: 'New track assembly CAD view', caption: 'Track assembly' },
-                  { src: '/images/Portfolio/Hyperloop Dynamics/Linear Induction Motor (LIM) CAD.png', alt: 'Linear Induction Motor CAD model', caption: 'LIM CAD' },
-                  { src: '/images/Portfolio/Hyperloop Dynamics/CAD of Lateral Wheels.png', alt: 'Lateral wheels assembly CAD', caption: 'Lateral wheels' },
-                  { src: '/images/Portfolio/Hyperloop Dynamics/CAD of braking board and vertical wheels.png', alt: 'Braking board and vertical wheels CAD', caption: 'Braking + vertical wheels' },
+                  { src: '/images/Portfolio/Hyperloop Dynamics/pod full CAD.png', alt: 'Pod full CAD render', caption: 'Full pod' },
                   { src: '/images/Portfolio/Hyperloop Dynamics/Chassis Lower (Bogie) CAD.png', alt: 'Chassis lower bogie CAD model', caption: 'Chassis lower (bogie)' },
-                  { src: '/images/Portfolio/Hyperloop Dynamics/pod full CAD.png', alt: 'Pod full CAD render', caption: 'Pod full CAD' },
+                  { src: '/images/Portfolio/Hyperloop Dynamics/CAD of braking board and vertical wheels.png', alt: 'Braking board and vertical wheels CAD', caption: 'Braking and vertical wheels' },
+                  { src: '/images/Portfolio/Hyperloop Dynamics/Linear Induction Motor (LIM) CAD.png', alt: 'Linear Induction Motor CAD model', caption: 'LIM CAD' },
+                  { src: '/images/Portfolio/Hyperloop Dynamics/new track assembly.PNG', alt: 'New track assembly CAD view', caption: 'Track assembly' },
                 ].map((item, index) => (
                   <div key={index} className="snap-center flex-shrink-0">
                     <div className="relative w-80 h-48 rounded-3xl overflow-hidden shadow-soft group">
