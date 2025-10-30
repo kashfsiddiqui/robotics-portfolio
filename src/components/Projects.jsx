@@ -68,7 +68,8 @@ const Projects = ({ onSpotClick, onCobotClick }) => {
       image: "/images/Landing Page Graphics/tar_dart_drone.png",
       bgColor: "bg-indigo-100",
       gridSpan: "col-span-1 row-span-1",
-      mobileSpan: "col-span-1 row-span-1"
+      mobileSpan: "col-span-1 row-span-1",
+      link: "/portfolio/thrustvector"
     },
     {
       type: "project",
@@ -89,7 +90,8 @@ const Projects = ({ onSpotClick, onCobotClick }) => {
       image: "/images/Landing Page Graphics/tar_drone_claw.png",
       bgColor: "bg-pink-100",
       gridSpan: "col-span-1 row-span-1",
-      mobileSpan: "col-span-1 row-span-1"
+      mobileSpan: "col-span-1 row-span-1",
+      link: "/portfolio/claw"
     },
     {
       type: "project",

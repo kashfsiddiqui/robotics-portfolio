@@ -8,6 +8,7 @@ import SpotPage from './pages/spot';
 import CobotPage from './pages/cobot';
 import GuadaloopPage from './pages/guadaloop';
 import ClawPage from './pages/claw';
+import ThrustVectorPage from './pages/thrustvector';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -22,6 +23,8 @@ function App() {
         setCurrentPage('guadaloop');
       } else if (path === '/portfolio/cobot') {
         setCurrentPage('cobot');
+      } else if (path === '/portfolio/thrustvector') {
+        setCurrentPage('thrustvector');
       } else if (path === '/portfolio/claw') {
         setCurrentPage('claw');
       } else {
@@ -71,6 +74,10 @@ function App() {
 
   if (currentPage === 'claw') {
     return <ClawPage />;
+  }
+
+  if (currentPage === 'thrustvector') {
+    return <ThrustVectorPage />;
   }
 
   return (

@@ -32,6 +32,12 @@ export default {
           accent50: '#FCE7EF',
           accent200: '#F7C9DA',
           accent600: '#E67AA1'
+        },
+        vector: {
+          accent: '#8EC7D0', // sampled light teal/blue-green placeholder (adjust to swatch)
+          accent50: '#E6F4F6',
+          accent200: '#BFE2E7',
+          accent600: '#5CAAB6'
         }
       },
       fontFamily: {
