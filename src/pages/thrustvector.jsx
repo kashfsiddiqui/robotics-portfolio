@@ -85,12 +85,12 @@ const ThrustVectorPage = () => {
 
           {/* FEATURE CARDS (2) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <RoundedCard imageSrc="/images/Portfolio/Thrust Vector/Thrust Vectoring Assembly.png" alt="Dual servo thrust vector actuation on coaxial motor" badge="PRECISION" colorScheme="vector">
+            <RoundedCard imageSrc="/images/Portfolio/Thrust Vector Drone/Thrust Vectoring Assembly.png" alt="Dual servo thrust vector actuation on coaxial motor" badge="PRECISION" colorScheme="vector">
               <h3 className="font-playfair text-2xl font-semibold">Precision Vector Control</h3>
               <p className="font-inter text-sm opacity-90 mt-2">Implemented thrust-vector actuation using dual servos coupled to a coaxial motor for responsive directional thrust and smooth attitude control during dart deployment.</p>
             </RoundedCard>
             
-            <RoundedCard imageSrc="/images/Portfolio/Thrust Vector/Team Photo.png" alt="Six-member controls team collaborating on test plan" badge="TEAM" colorScheme="vector">
+            <RoundedCard imageSrc="/images/Portfolio/Thrust Vector Drone/Thrust Vector Team.png" alt="Six-member controls team collaborating on test plan" badge="TEAM" colorScheme="vector">
               <h3 className="font-playfair text-2xl font-semibold">Collaborative Development</h3>
               <p className="font-inter text-sm opacity-90 mt-2">Worked with a six-member controls team to synchronize dart and drone dynamics, integrating Simulink, ESP32 firmware, and sensor feedback for consistent autonomous landing behavior.</p>
             </RoundedCard>
