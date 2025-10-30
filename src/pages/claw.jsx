@@ -103,25 +103,7 @@ const ClawPage = () => {
             </RoundedCard>
           </div>
 
-          {/* FEATURE BLOCK */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }}>
-            <div className="relative rounded-4xl overflow-hidden shadow-soft">
-              <img
-                src="/images/Portfolio/Claw Retrieval/UAV Frame & Payload Integration.png"
-                alt="UAV frame with integrated landing gear and claw mechanism"
-                className="w-full h-[26rem] md:h-[32rem] object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-8 md:p-12 flex flex-col justify-end">
-                <div className="mb-3">
-                  <span className="inline-block px-3 py-1 text-xs font-medium uppercase tracking-wide rounded-full bg-claw-accent200 text-claw-accent600">ARCHITECTURE</span>
-                </div>
-                <h2 className="text-white font-playfair text-4xl md:text-5xl font-semibold">Reliable Capture. Controlled Delivery.</h2>
-                <p className="text-neutral-100 font-inter mt-3 max-w-2xl">The team built a 2-in-1 landing gear and claw system so the drone can descend, stabilize, grab payload, and lift without needing a full manipulator arm. We are also bringing up a driver PCB for motor control with PID, and adding a searchlight module for low-light retrieval.</p>
-                <button onClick={() => document.getElementById('design-insights')?.scrollIntoView({ behavior: 'smooth' })} className="mt-6 bg-claw-accent hover:bg-claw-accent200 text-neutral-900 px-6 py-2 rounded-full font-medium transition">Learn More</button>
-              </div>
-            </div>
-          </motion.div>
+          
 
           {/* PROJECT GALLERY */}
           <motion.div id="gallery" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }} className="space-y-8">
@@ -129,8 +111,8 @@ const ClawPage = () => {
               <SectionTitle>Project Gallery</SectionTitle>
               <p className="font-inter text-lg text-gray-600 mt-4">See the claw retrieval platform in testing and CAD</p>
             </div>
-            <div className="overflow-x-auto scrollbar-hide snap-x snap-mandatory">
-              <div className="flex space-x-6 pb-4" style={{ width: 'max-content' }}>
+            <div className="w-full">
+              <div className="flex flex-wrap justify-center gap-6 pb-4">
                 {[
                   { src: '/images/Portfolio/Claw Retrieval/UAV Frame & Payload Integration.png', alt: 'Quadrotor frame with claw-ready landing gear and electronics bay', caption: 'Quadrotor frame with claw-ready landing gear and electronics bay' },
                   { src: '/images/Portfolio/Claw Retrieval/Claw Mechanism Prototype.png', alt: 'Claw mechanism prototype with dual-rail actuation', caption: 'Claw mechanism prototype with dual-rail actuation' },
