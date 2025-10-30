@@ -205,7 +205,7 @@ generate_commits() {
     
     # Push to default branch remotes if available
     if git remote | grep -q "^origin$"; then
-      git push origin HEAD:main --quiet || true
+      git push origin HEAD:master --quiet || true
     fi
     if git remote | grep -q "^kashf-robotics$"; then
       git push kashf-robotics HEAD:master --quiet || true
@@ -220,6 +220,10 @@ generate_commits() {
     echo "git log --since=\"2025-01-01\" --until=\"2025-10-30\" --format=\"%h %ad %s\" --date=short"
     echo ""
     echo "Reminder: 2024 greens appear under the 2024 tab; this backfill populates 2025."
+
+    echo ""
+    echo "Recent 2025 entries (last 10 in Jan–Feb window):"
+    git log --since="2025-01-01" --until="2025-03-01" --format="%h %ad %ae" --date=short | tail -n 10 || true
     echo ""
     echo "🚀 To push to GitHub, run:"
     echo "   git push origin master"
