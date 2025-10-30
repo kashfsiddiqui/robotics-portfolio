@@ -38,6 +38,12 @@ export default {
           accent50: '#E6F4F6',
           accent200: '#BFE2E7',
           accent600: '#5CAAB6'
+        },
+        hcrl: {
+          accent: '#7F6CD9', // purple accent for HCRL page
+          accent50: '#F0EDF9',
+          accent200: '#C4B5E8',
+          accent600: '#6B52C4'
         }
       },
       fontFamily: {

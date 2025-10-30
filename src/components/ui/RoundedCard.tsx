@@ -19,6 +19,8 @@ export const RoundedCard = ({
     badgeClasses = "bg-claw-accent200 text-claw-accent600";
   } else if (colorScheme === "vector") {
     badgeClasses = "bg-vector-accent200 text-vector-accent600";
+  } else if (colorScheme === "hcrl") {
+    badgeClasses = "bg-hcrl-accent200 text-hcrl-accent600";
   }
     
   return (
