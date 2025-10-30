@@ -57,7 +57,7 @@ const ThrustVectorPage = () => {
                 </motion.button>
               </div>
               <div className="relative h-full">
-                <img src="/images/Portfolio/Thrust Vector/Thrust Vectoring Assembly.png" alt="Thrust vectoring assembly with coaxial motor and dual servos" className="w-full h-full object-cover" loading="eager" />
+                <img src="/images/Portfolio/Thrust Vector Drone/Thrust Vectoring Assembly.png" alt="Thrust vectoring assembly with coaxial motor and dual servos" className="w-full h-full object-cover" loading="eager" />
               </div>
             </div>
           </motion.div>
@@ -93,6 +93,31 @@ const ThrustVectorPage = () => {
                   <p className="font-inter text-gray-700">{highlight}</p>
                 </motion.div>
               ))}
+            </div>
+          </motion.div>
+
+          {/* PROJECT GALLERY */}
+          <motion.div id="gallery" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }} className="space-y-8">
+            <div className="text-center">
+              <SectionTitle>Project Gallery</SectionTitle>
+              <p className="font-inter text-lg text-gray-600 mt-4">Thrust vectoring assembly and team collaboration</p>
+            </div>
+            <div className="w-full">
+              <div className="flex flex-wrap justify-center gap-6 pb-4">
+                {[
+                  { src: '/images/Portfolio/Thrust Vector Drone/Thrust Vectoring Assembly.png', alt: 'Thrust vectoring assembly with coaxial motor and dual servos', caption: 'Thrust vectoring assembly with coaxial motor and dual servos' },
+                  { src: '/images/Portfolio/Thrust Vector Drone/Thrust Vector Team.png', alt: 'Six-member controls team collaborating on test plan', caption: 'Six-member controls team collaborating on test plan' },
+                ].map((item, index) => (
+                  <div key={index} className="snap-center flex-shrink-0">
+                    <div className="relative w-80 h-48 rounded-3xl overflow-hidden shadow-soft group bg-white">
+                      <img src={item.src} alt={item.alt} className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-95 group-hover:scale-105" loading="lazy" />
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                        <p className="text-white text-sm font-medium">{item.caption}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
 
