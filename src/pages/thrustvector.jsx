@@ -62,19 +62,6 @@ const ThrustVectorPage = () => {
             </div>
           </motion.div>
 
-          {/* FEATURE CARDS (2) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <RoundedCard imageSrc="/images/Portfolio/Thrust Vector/Thrust Vectoring Assembly.png" alt="Dual servo thrust vector actuation on coaxial motor" badge="PRECISION" colorScheme="vector">
-              <h3 className="font-playfair text-2xl font-semibold">Precision Vector Control</h3>
-              <p className="font-inter text-sm opacity-90 mt-2">Implemented thrust-vector actuation using dual servos coupled to a coaxial motor for responsive directional thrust and smooth attitude control during dart deployment.</p>
-            </RoundedCard>
-            
-            <RoundedCard imageSrc="/images/Portfolio/Thrust Vector/Team Photo.png" alt="Six-member controls team collaborating on test plan" badge="TEAM" colorScheme="vector">
-              <h3 className="font-playfair text-2xl font-semibold">Collaborative Development</h3>
-              <p className="font-inter text-sm opacity-90 mt-2">Worked with a six-member controls team to synchronize dart and drone dynamics, integrating Simulink, ESP32 firmware, and sensor feedback for consistent autonomous landing behavior.</p>
-            </RoundedCard>
-          </div>
-
           {/* KEY HIGHLIGHTS */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }} className="bg-gray-50 rounded-4xl p-8 md:p-12">
             <div className="text-center mb-12">
@@ -93,6 +80,34 @@ const ThrustVectorPage = () => {
                   <p className="font-inter text-gray-700">{highlight}</p>
                 </motion.div>
               ))}
+            </div>
+          </motion.div>
+
+          {/* FEATURE CARDS (2) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <RoundedCard imageSrc="/images/Portfolio/Thrust Vector/Thrust Vectoring Assembly.png" alt="Dual servo thrust vector actuation on coaxial motor" badge="PRECISION" colorScheme="vector">
+              <h3 className="font-playfair text-2xl font-semibold">Precision Vector Control</h3>
+              <p className="font-inter text-sm opacity-90 mt-2">Implemented thrust-vector actuation using dual servos coupled to a coaxial motor for responsive directional thrust and smooth attitude control during dart deployment.</p>
+            </RoundedCard>
+            
+            <RoundedCard imageSrc="/images/Portfolio/Thrust Vector/Team Photo.png" alt="Six-member controls team collaborating on test plan" badge="TEAM" colorScheme="vector">
+              <h3 className="font-playfair text-2xl font-semibold">Collaborative Development</h3>
+              <p className="font-inter text-sm opacity-90 mt-2">Worked with a six-member controls team to synchronize dart and drone dynamics, integrating Simulink, ESP32 firmware, and sensor feedback for consistent autonomous landing behavior.</p>
+            </RoundedCard>
+          </div>
+
+          
+
+          {/* NEXT STEPS */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }} className="text-center">
+            <div className="bg-white rounded-4xl p-8 md:p-12 shadow-soft">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6">Next Steps</h2>
+              <p className="font-inter text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+                The next iteration will expand simulation fidelity in Simulink to incorporate aerodynamic coupling and add closed-loop feedback for higher-order stabilization, preparing for outdoor dart-deployment testing under GPS-denied conditions.
+              </p>
+              <motion.button onClick={() => (window.location.href = 'mailto:kashfsiddiqui@utexas.edu')} className="bg-vector-accent hover:bg-vector-accent200 text-gray-900 font-medium px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-lg" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                Contact me
+              </motion.button>
             </div>
           </motion.div>
 
@@ -118,19 +133,6 @@ const ThrustVectorPage = () => {
                   </div>
                 ))}
               </div>
-            </div>
-          </motion.div>
-
-          {/* NEXT STEPS */}
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }} className="text-center">
-            <div className="bg-white rounded-4xl p-8 md:p-12 shadow-soft">
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6">Next Steps</h2>
-              <p className="font-inter text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-                The next iteration will expand simulation fidelity in Simulink to incorporate aerodynamic coupling and add closed-loop feedback for higher-order stabilization, preparing for outdoor dart-deployment testing under GPS-denied conditions.
-              </p>
-              <motion.button onClick={() => (window.location.href = 'mailto:kashfsiddiqui@utexas.edu')} className="bg-vector-accent hover:bg-vector-accent200 text-gray-900 font-medium px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-lg" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                Contact me
-              </motion.button>
             </div>
           </motion.div>
 
