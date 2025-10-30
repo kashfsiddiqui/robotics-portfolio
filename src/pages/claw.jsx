@@ -105,6 +105,21 @@ const ClawPage = () => {
 
           
 
+          {/* SUMMARY PARAGRAPH ABOVE GALLERY */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="rounded-3xl shadow-md bg-gray-50 px-10 py-16 mt-4"
+          >
+            <div className="max-w-3xl mx-auto font-inter">
+              <p className="text-gray-700 leading-relaxed text-center">
+                Our team is part of Texas Aerial Robotics. We are building a drone that can pick up objects and deliver them. The core idea is a 2-in-1 landing gear and claw so the UAV can land, brace, grab a payload, and lift again. I led design work on the claw mechanism and early integration. We tuned servo actuation, center of mass, and frame stability so the aircraft could hold a load without tipping. We also started a motor driver PCB with PID control for the claw and added a searchlight so retrieval can still work in low light. We validated grip force, pickup accuracy, and hover stability in more than five autonomous retrieval tests.
+              </p>
+            </div>
+          </motion.section>
+
           {/* PROJECT GALLERY */}
           <motion.div id="gallery" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }} className="space-y-8">
             <div className="text-center">
@@ -131,14 +146,7 @@ const ClawPage = () => {
             </div>
           </motion.div>
 
-          {/* DESIGN INSIGHTS */}
-          <motion.section id="design-insights" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }} className="rounded-3xl shadow-md bg-gray-50 px-10 py-16 mt-4">
-            <div className="prose max-w-4xl mx-auto font-inter">
-              <p className="text-gray-700 leading-relaxed">
-                Our team is part of Texas Aerial Robotics. We are building a drone that can pick up objects and deliver them. The core idea is a 2-in-1 landing gear and claw so the UAV can land, brace, grab a payload, and lift again. I led design work on the claw mechanism and early integration. We tuned servo actuation, center of mass, and frame stability so the aircraft could hold a load without tipping. We also started a motor driver PCB with PID control for the claw and added a searchlight so retrieval can still work in low light. We validated grip force, pickup accuracy, and hover stability in more than five autonomous retrieval tests.
-              </p>
-            </div>
-          </motion.section>
+          
 
           {/* KEY HIGHLIGHTS */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }} className="bg-gray-50 rounded-4xl p-8 md:p-12">
