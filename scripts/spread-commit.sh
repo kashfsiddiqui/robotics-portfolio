@@ -173,8 +173,9 @@ generate_commits() {
             esac
             
             # Set git environment variables for timestamping
-            export GIT_AUTHOR_DATE="${commit_date}T${commit_time}"
-            export GIT_COMMITTER_DATE="${commit_date}T${commit_time}"
+            # Explicitly export timestamps for this commit
+            export GIT_AUTHOR_DATE="${commit_date} ${commit_time}"
+            export GIT_COMMITTER_DATE="${commit_date} ${commit_time}"
             
             # Create a small change to commit
             echo "<!-- Commit for $commit_date at $commit_time (commit $i/$commits_today) -->" >> activity.log
@@ -199,12 +200,12 @@ generate_commits() {
     
     echo ""
     echo "🎉 Successfully generated $total_commits commits across $days days!"
-    echo "✅ Commits successfully spread across $start_date → $end_date"
+    echo "✅ Backfill complete: $start_date → $end_date"
     echo "📈 Your GitHub contribution graph should now show activity across 2025"
     
     # Push to default branch remotes if available
     if git remote | grep -q "^origin$"; then
-      git push origin HEAD:master --quiet || true
+      git push origin HEAD:main --quiet || true
     fi
     if git remote | grep -q "^kashf-robotics$"; then
       git push kashf-robotics HEAD:master --quiet || true
@@ -262,6 +263,20 @@ if [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
     exit 0
 fi
 
+# Optional email parameter via --email or COMMIT_EMAIL env
+USER_EMAIL=""
+for arg in "$@"; do
+  case $arg in
+    --email=*)
+      USER_EMAIL="${arg#*=}"
+      shift
+      ;;
+  esac
+done
+if [ -z "$USER_EMAIL" ] && [ -n "$COMMIT_EMAIL" ]; then
+  USER_EMAIL="$COMMIT_EMAIL"
+fi
+
 # Check if we're in a git repository
 if ! git rev-parse --git-dir > /dev/null 2>&1; then
     echo "❌ Error: Not in a git repository"
@@ -290,4 +305,15 @@ if ! command -v date >/dev/null 2>&1; then
 fi
 
 # Run the main function
+# Ensure verified email is configured
+if [ -n "$USER_EMAIL" ]; then
+  git config user.email "$USER_EMAIL"
+fi
+
+# If still no email in config, abort to avoid anonymous commits
+if [ -z "$(git config user.email)" ]; then
+  echo "❌ Error: No Git user.email configured. Provide --email=you@example.com or set COMMIT_EMAIL."
+  exit 1
+fi
+
 generate_commits
