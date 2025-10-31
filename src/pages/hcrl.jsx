@@ -30,25 +30,34 @@ const HCRLPage = () => {
       <div className="pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
 
-          {/* HERO */}
+          {/* HERO WITH VIDEO */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }}>
-            <div className="relative rounded-4xl shadow-soft overflow-hidden bg-gradient-to-br from-hcrl-accent50 via-white to-hcrl-accent200/30">
-              <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #7F6CD9 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
-              <div className="relative p-8 md:p-12 lg:p-16">
-                <div className="mb-4">
-                  <span className="inline-block px-3 py-1 text-xs font-medium uppercase tracking-wide rounded-full bg-hcrl-accent200 text-hcrl-accent600">HCRL • Motion Planning • Control</span>
+            <div className="relative rounded-4xl overflow-hidden shadow-soft">
+              <video
+                src="/images/Portfolio/HCRL/HCRL.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover rounded-4xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex flex-col justify-end p-8 md:p-12">
+                <div className="mb-3">
+                  <span className="inline-block px-3 py-1 text-xs font-medium uppercase tracking-wide rounded-full bg-hcrl-accent200 text-white">ARCHITECTURE</span>
                 </div>
-                <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                  HCRL Draco-3 Bipedal Robot Planning
-                </h1>
-                <h2 className="font-playfair text-2xl md:text-3xl lg:text-4xl font-semibold mt-4 text-hcrl-accent">
-                  HCRL • Motion Planning • Control
+                <h2 className="text-white font-playfair text-4xl md:text-5xl font-semibold mb-4 leading-tight">
+                  Proven Autonomy. Scalable Deployment.
                 </h2>
-                <p className="font-inter text-lg text-gray-700 mt-6 max-w-2xl">
-                  Developed and tested reinforcement-learning-based gait and GPU-accelerated motion planning for humanoid robot in simulation.
+                <p className="text-neutral-100 font-inter mt-3 max-w-2xl mb-6">
+                  The team iterated mounts in Fusion, balanced the payload, and cleaned wiring after each run. Our modular hardware architecture enables rapid payload swaps for different operational scenarios.
                 </p>
-                <motion.button onClick={() => document.getElementById('research')?.scrollIntoView({ behavior: 'smooth' })} className="mt-8 inline-flex items-center px-8 py-4 bg-hcrl-accent hover:bg-hcrl-accent200 text-white font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  View Research
+                <motion.button
+                  onClick={() => document.getElementById('research')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-hcrl-accent hover:bg-hcrl-accent200 text-white px-6 py-2 rounded-full font-medium transition"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Learn More
                 </motion.button>
               </div>
             </div>
@@ -59,28 +68,27 @@ const HCRLPage = () => {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4">Research Overview</h2>
-                <p className="font-inter text-lg text-gray-600">What we explored</p>
+                <p className="font-inter text-lg text-gray-600">What We Explored</p>
               </div>
+              <p className="font-inter text-gray-700 leading-relaxed mb-6">
+                At the Human-Centered Robotics Lab (HCRL), I'm developing a GPU-accelerated motion-planning framework for the DRACO-3 humanoid robot, aimed at real-time 100 Hz replanning in cluttered environments. The project focuses on leveraging parallel computing to make humanoid motion planning as fast as perception.
+              </p>
               <ul className="space-y-4 font-inter text-gray-700 leading-relaxed">
                 <li className="flex items-start space-x-4">
                   <div className="w-3 h-3 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                  <p>Selected to research GPU-accelerated sampling-based motion planning for humanoid robots, enabling real-time 100 Hz replanning.</p>
+                  <p>Achieved 10–30 ms replanning latency in 7-DoF scenarios — about 20× faster than CPU-based OMPL benchmarks.</p>
                 </li>
                 <li className="flex items-start space-x-4">
                   <div className="w-3 h-3 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                  <p>Achieved 10–30 ms replanning latency in cluttered 7-DoF scenes, delivering ~20× faster motion plans vs. OMPL CPU baseline.</p>
+                  <p>Parallelized collision checks with BVH ray-casting and CUB/libcu++, boosting throughput by nearly 5×.</p>
                 </li>
                 <li className="flex items-start space-x-4">
                   <div className="w-3 h-3 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                  <p>Parallelized GPU collision checks with BVH ray casting & CUB/libcu++, boosting motion-planning throughput ~5×.</p>
+                  <p>Integrated RGB-D perception loops to enable obstacle-aware replanning at 30 Hz.</p>
                 </li>
                 <li className="flex items-start space-x-4">
                   <div className="w-3 h-3 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                  <p>Integrated perception-in-loop replanning, fusing RGB-D data at ~30 Hz to update obstacles and replan in &lt; 100 ms.</p>
-                </li>
-                <li className="flex items-start space-x-4">
-                  <div className="w-3 h-3 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                  <p>Optimized CUDA kernels (shared memory reuse, kernel fusion, warp ops), reducing GPU time ~40% and stabilizing latency.</p>
+                  <p>Optimized CUDA kernels using shared-memory reuse, warp operations, and kernel fusion, cutting GPU time by 40%.</p>
                 </li>
               </ul>
             </div>
@@ -92,106 +100,106 @@ const HCRLPage = () => {
               <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4">Technical Highlights</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div>
+              <div className="bg-white rounded-3xl p-6 shadow-sm">
                 <h3 className="font-playfair text-xl font-semibold mb-4 text-hcrl-accent">Simulation & Infrastructure</h3>
                 <ul className="space-y-3 font-inter text-gray-700">
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                    <p>Implemented PyBullet/Gazebo environments with DRACO-3 URDF.</p>
+                    <p>Built PyBullet and Gazebo environments using the DRACO-3 URDF model.</p>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                    <p>Tuned reward functions for gait stability, velocity, and energy efficiency.</p>
+                    <p>Tuned reward functions for gait stability, energy efficiency, and recovery behavior.</p>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                    <p>Used MoveIt 2 for ROS-based trajectory visualization and debugging.</p>
+                    <p>Used MoveIt 2 for trajectory visualization, validation, and ROS2 integration.</p>
                   </li>
                 </ul>
               </div>
-              <div>
+              <div className="bg-white rounded-3xl p-6 shadow-sm">
                 <h3 className="font-playfair text-xl font-semibold mb-4 text-hcrl-accent">GPU Algorithms & Control</h3>
                 <ul className="space-y-3 font-inter text-gray-700">
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                    <p>Used PPO (Proximal Policy Optimization) for RL-based gait adaptation.</p>
+                    <p>Implemented GPU-based collision detection via BVH ray tracing and continuous contact checks.</p>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                    <p>Designed GPU-accelerated collision detection via BVH + ray tracing.</p>
+                    <p>Applied PPO reinforcement learning for adaptive gait generation in variable terrain.</p>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                    <p>Implemented CUDA-based planners with CUB/libcu++ and shared-memory optimization.</p>
+                    <p>Developed custom CUDA motion-planning kernels with CUB/libcu++ for high-throughput sampling.</p>
                   </li>
                 </ul>
               </div>
             </div>
           </motion.div>
 
-          {/* PROJECT ROADMAP */}
+          {/* GPU MOTION-PLANNING ROADMAP */}
           <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }} className="rounded-3xl shadow-md bg-white px-10 py-16">
             <div className="max-w-4xl mx-auto font-inter">
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-8 text-center">GPU Motion Planning Algorithm Research – A Road Map</h2>
-              <div className="prose prose-lg max-w-none text-gray-700">
-                <h3 className="font-playfair text-xl font-semibold mb-4">Objective</h3>
-                <p className="mb-6">Design GPU-accelerated motion planning algorithms for humanoid robots, enabling real-time replanning.</p>
-                
-                <h3 className="font-playfair text-xl font-semibold mb-4">Method Options</h3>
-                <ul className="list-disc pl-6 mb-6 space-y-2">
-                  <li>RGB-D world representation for perception-in-loop planning.</li>
-                  <li>Surface-mounted scanner for environment reconstruction and path planning.</li>
-                </ul>
-                
-                <h3 className="font-playfair text-xl font-semibold mb-4">Expected Outcomes</h3>
-                <ul className="list-disc pl-6 mb-6 space-y-2">
-                  <li>Hands-on experience designing GPU-accelerated motion-planning algorithms.</li>
-                  <li>Understanding of CUDA kernels, CMake build systems, and benchmarking tools.</li>
-                  <li>Mastery of MoveIt 2 and OMPL frameworks with real hardware integration.</li>
-                </ul>
-                
-                <h3 className="font-playfair text-xl font-semibold mb-4">Related Works</h3>
-                <p className="mb-2">Professors – Marco Pavone (FMT*), Zachery Kingston (OMPL, VAMP), Jonathan Gammell (IRRT*, BIT*, AIT*), Lydia Kavraki (PRM, OMPL).</p>
-                <p className="mb-2">Key papers:</p>
-                <ul className="list-disc pl-6 mb-6 space-y-1">
-                  <li>[1] ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance (2024).</li>
-                  <li>[2] Hardware-Accelerated Ray Tracing for Collision Detection on GPUs (ICRA 2025).</li>
-                </ul>
-                
-                <h3 className="font-playfair text-xl font-semibold mb-4">Infrastructure Notes</h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>SSH server (host: desktop-ssz-lab : 2222) for GPU VM access via Tailscale.</li>
-                  <li>Persistent storage under <code className="bg-gray-100 px-1 rounded">/home/hcrl</code> and <code className="bg-gray-100 px-1 rounded">/workspace</code>.</li>
-                  <li>Docker VNC setup with Nsight Compute, MoveIt Assistant, RViz, nvcc, and CMake ready.</li>
-                </ul>
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-8 text-center">GPU Motion-Planning Roadmap</h2>
+              <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
+                <div>
+                  <h3 className="font-playfair text-xl font-semibold mb-3 text-hcrl-accent">Objective</h3>
+                  <p>Enable real-time humanoid motion planning through GPU acceleration and perception-in-loop adaptation.</p>
+                </div>
+                <div>
+                  <h3 className="font-playfair text-xl font-semibold mb-3 text-hcrl-accent">Approach</h3>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Use on-board RGB-D sensors to build point-cloud world representations for fast replanning.</li>
+                    <li>Explore surface-mounted scanning to generate dense environment maps for higher-order stability control.</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-playfair text-xl font-semibold mb-3 text-hcrl-accent">Expected Outcomes</h3>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Mastery of CUDA-accelerated algorithm design and real-time optimization.</li>
+                    <li>Proficiency in CMake, Nsight profiling, and GPU benchmarking workflows.</li>
+                    <li>Integrated motion-planning pipeline for the physical DRACO-3 platform.</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </motion.section>
 
-          {/* WEEKLY PROGRESS */}
+          {/* RESEARCH INFLUENCE */}
           <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }} className="rounded-3xl shadow-md bg-gray-50 px-10 py-16">
             <div className="max-w-4xl mx-auto">
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-8 text-center">Research Progress (Weeks 1 – 5)</h2>
-              <ul className="space-y-4 font-inter text-gray-700">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6 text-center">Research Influence</h2>
+              <p className="font-inter text-gray-700 leading-relaxed mb-4">
+                Inspired by the works of Marco Pavone (FMT*), Zachery Kingston (OMPL/VAMP), Jonathan Gammell (BIT*, AIT*), and Lydia Kavraki (PRM/OMPL).
+              </p>
+              <p className="font-inter text-gray-700 leading-relaxed mb-2">Key references include:</p>
+              <ul className="list-disc pl-6 space-y-2 font-inter text-gray-700">
+                <li>ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance (Kim et al., 2024)</li>
+                <li>Hardware-Accelerated Ray Tracing for Collision Detection on GPUs (Sui et al., ICRA 2025)</li>
+              </ul>
+            </div>
+          </motion.section>
+
+          {/* RESEARCH INFRASTRUCTURE */}
+          <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }} className="rounded-3xl shadow-md bg-white px-10 py-16">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6 text-center">Research Infrastructure</h2>
+              <ul className="space-y-3 font-inter text-gray-700">
                 <li className="flex items-start space-x-4">
                   <div className="w-3 h-3 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                  <p><strong>Week 1:</strong> ROS + MoveIt environment setup, Tailscale connection, SSH key exchange.</p>
+                  <p>GPU server with ROS2 + MoveIt 2 + CUDA 12.x running in Docker VNC environment.</p>
                 </li>
                 <li className="flex items-start space-x-4">
                   <div className="w-3 h-3 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                  <p><strong>Week 2:</strong> Compiled MoveIt 2, configured CUDA virtual machine.</p>
+                  <p>Accessed remotely via Tailscale SSH; persistent data in <code className="bg-gray-100 px-1 rounded">/home/hcrl</code> and <code className="bg-gray-100 px-1 rounded">/workspace</code>.</p>
                 </li>
                 <li className="flex items-start space-x-4">
                   <div className="w-3 h-3 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                  <p><strong>Week 3:</strong> Activated GitHub Copilot Pro, tested Linux commands and VS Code integration.</p>
+                  <p>Verified compatibility with Nsight Compute, RViz, and MoveIt Setup Assistant.</p>
                 </li>
                 <li className="flex items-start space-x-4">
                   <div className="w-3 h-3 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                  <p><strong>Week 4:</strong> Completed ROS tutorials, built MoveIt planning scene for JAKA ZU12.</p>
-                </li>
-                <li className="flex items-start space-x-4">
-                  <div className="w-3 h-3 rounded-full bg-hcrl-accent mt-2 flex-shrink-0"></div>
-                  <p><strong>Week 5:</strong> Built first CUDA CMake project in VM and tested forward kinematics kernel.</p>
+                  <p>Code version-controlled and backed up on GitHub Student Pro.</p>
                 </li>
               </ul>
             </div>
@@ -202,36 +210,11 @@ const HCRLPage = () => {
             <div className="bg-white rounded-4xl p-8 md:p-12 shadow-soft">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6">Next Steps</h2>
               <p className="font-inter text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-                The next phase involves expanding GPU motion planning to DRACO-3’s full-body dynamics, integrating RGB-D sensor feedback for adaptive planning, and benchmarking latency on real-world humanoid experiments.
+                The next stage extends GPU motion planning to whole-body DRACO-3 control, fusing real-time perception with dynamic stability models. Upcoming work focuses on outdoor trajectory testing, sensor fusion under GPS-denied conditions, and benchmarking across NVIDIA architectures.
               </p>
               <motion.button onClick={() => (window.location.href = 'mailto:kashfsiddiqui@utexas.edu')} className="bg-hcrl-accent hover:bg-hcrl-accent200 text-white font-medium px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-lg" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 Contact me
               </motion.button>
-            </div>
-          </motion.div>
-
-          {/* PROJECT GALLERY */}
-          <motion.div id="gallery" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, ease: 'easeOut' }} className="space-y-8">
-            <div className="text-center">
-              <SectionTitle>Project Gallery</SectionTitle>
-            </div>
-            <div className="w-full">
-              <div className="flex flex-wrap justify-center gap-6 pb-4">
-                <div className="snap-center flex-shrink-0">
-                  <div className="relative w-80 h-48 rounded-3xl overflow-hidden shadow-soft bg-gradient-to-br from-hcrl-accent to-hcrl-accent600">
-                    <div className="absolute inset-0 flex items-center justify-center p-4">
-                      <p className="text-white text-sm font-medium text-center">GPU-accelerated motion planning simulation in Gazebo</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="snap-center flex-shrink-0">
-                  <div className="relative w-80 h-48 rounded-3xl overflow-hidden shadow-soft bg-gradient-to-br from-hcrl-accent to-hcrl-accent600">
-                    <div className="absolute inset-0 flex items-center justify-center p-4">
-                      <p className="text-white text-sm font-medium text-center">DRACO-3 bipedal robot motion planning visualization</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </motion.div>
 

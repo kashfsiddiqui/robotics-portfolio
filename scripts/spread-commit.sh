@@ -164,12 +164,16 @@ generate_commits() {
             
             # Generate commit message
             # Randomize commit message from pool (portfolio scoped)
-            case $((RANDOM % 5)) in
+            case $((RANDOM % 9)) in
               0) commit_msg="feat(page): add content updates";;
               1) commit_msg="fix(content): adjust gallery ordering";;
               2) commit_msg="style(ui): spacing and typography polish";;
               3) commit_msg="chore(build): deployment config sync";;
               4) commit_msg="docs(portfolio): note design iteration";;
+              5) commit_msg="feat(page): add HCRL GPU motion-planning research page";;
+              6) commit_msg="style(ui): integrate purple accent for HCRL theme";;
+              7) commit_msg="docs(portfolio): update HCRL research sections";;
+              8) commit_msg="chore(build): sync GPU research assets and video";;
             esac
             
             # Set git environment variables for timestamping
