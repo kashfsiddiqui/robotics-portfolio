@@ -32,33 +32,49 @@ const HCRLPage = () => {
 
           {/* HERO WITH VIDEO */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }}>
-            <div className="relative rounded-4xl overflow-hidden shadow-soft">
-              <video
-                src="/images/Portfolio/HCRL/HCRL.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover rounded-4xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex flex-col justify-end p-8 md:p-12">
-                <div className="mb-3">
-                  <span className="inline-block px-3 py-1 text-xs font-medium uppercase tracking-wide rounded-full bg-hcrl-accent200 text-white">ARCHITECTURE</span>
+            <div className="relative rounded-4xl overflow-hidden shadow-soft group">
+              <a
+                href="https://www.youtube.com/watch?v=SGCKReZyQe0&t=6s"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block relative w-full"
+              >
+                <video
+                  src="/images/Portfolio/HCRL/HCRL.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover rounded-4xl"
+                />
+                {/* Purple hover overlay */}
+                <div className="absolute inset-0 bg-hcrl-accent/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-4xl pointer-events-none"></div>
+              </a>
+              {/* Text overlay - stays on top */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent flex flex-col justify-end p-8 md:p-12 pointer-events-none z-10">
+                <div className="pointer-events-auto">
+                  <div className="mb-3">
+                    <span className="inline-block px-3 py-1 text-xs font-medium uppercase tracking-wide rounded-full bg-hcrl-accent200 text-white">ARCHITECTURE</span>
+                  </div>
+                  <h2 className="text-white font-playfair text-4xl md:text-5xl font-semibold mb-4 leading-tight">
+                    Proven Autonomy. Scalable Deployment.
+                  </h2>
+                  <p className="text-neutral-100 font-inter mt-3 max-w-2xl mb-6">
+                    The team iterated mounts in Fusion, balanced the payload, and cleaned wiring after each run. Our modular hardware architecture enables rapid payload swaps for different operational scenarios.
+                  </p>
+                  <motion.button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      document.getElementById('research')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="bg-hcrl-accent hover:bg-hcrl-accent200 text-white px-6 py-2 rounded-full font-medium transition"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Learn More
+                  </motion.button>
                 </div>
-                <h2 className="text-white font-playfair text-4xl md:text-5xl font-semibold mb-4 leading-tight">
-                  Proven Autonomy. Scalable Deployment.
-                </h2>
-                <p className="text-neutral-100 font-inter mt-3 max-w-2xl mb-6">
-                  The team iterated mounts in Fusion, balanced the payload, and cleaned wiring after each run. Our modular hardware architecture enables rapid payload swaps for different operational scenarios.
-                </p>
-                <motion.button
-                  onClick={() => document.getElementById('research')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-hcrl-accent hover:bg-hcrl-accent200 text-white px-6 py-2 rounded-full font-medium transition"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Learn More
-                </motion.button>
               </div>
             </div>
           </motion.div>
