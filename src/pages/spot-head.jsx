@@ -77,28 +77,31 @@ const SpotHeadPage = () => {
               badge="AMRL • Mechatronics • Sensors"
               colorScheme="spothead"
             >
-              {/* warm overlay + dark gradient for readability */}
-              <div className="pointer-events-none absolute inset-0 rounded-3xl" style={{background: 'linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 80%), rgba(255, 240, 150, 0.15)'}} />
-              <div className="relative max-w-2xl">
+              {/* warm yellow gradient + reduced dark overlay for readability */}
+              <div className="pointer-events-none absolute inset-0 rounded-3xl" style={{background: 'linear-gradient(180deg, rgba(255, 240, 170, 0.25) 0%, rgba(0, 0, 0, 0.35) 100%)'}} />
+              <div className="relative max-w-2xl flex flex-col justify-center min-h-[18rem] md:min-h-[24rem]">
                 <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-[#0F172A]">
                   AMRL Spot Head
                 </h1>
                 <h2 className="font-playfair text-2xl md:text-3xl font-semibold mb-6 text-spothead-accent">
                   Servo-Actuated Payload & Sensor Mount
                 </h2>
-                <p className="font-inter text-lg opacity-90 mb-2 text-[#334155]">
+                <p className="font-inter text-lg opacity-90 mb-2 text-[#E5E7EB]">
                   Built servo-actuated head and modular sensor mounts for Boston Dynamics Spot.
                 </p>
-                <p className="font-inter text-lg opacity-90 mb-8 text-[#334155]">
+                <p className="font-inter text-lg opacity-90 mb-8 text-[#E5E7EB]">
                   Dynamixel pan-tilt, LiDAR + camera pods, and touchscreen HRI — packaged for fast swaps.
                 </p>
                 <motion.button
-                  className="bg-spothead-accent text-[#0F172A] font-inter font-medium px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:bg-spothead-accent600 active:bg-[#CBB753] shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_24px_rgba(249,226,122,0.5)]"
+                  className="bg-spothead-accent text-[#0F172A] font-inter font-semibold px-8 py-3 rounded-xl transition-all duration-200 hover:scale-105 hover:bg-spothead-accent50 active:bg-[#CBB753] shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_0_12px_rgba(249,226,122,0.45)] inline-flex items-center gap-2"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Project Gallery
+                  View Gallery
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </motion.button>
               </div>
             </RoundedCard>
