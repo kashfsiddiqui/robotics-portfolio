@@ -12,7 +12,7 @@ const SpotHeadPage = () => {
           <div className="flex justify-between items-center py-4">
             <a
               href="/"
-              className="flex items-center gap-3 text-lg font-playfair text-gray-900 hover:text-gray-600 transition-colors duration-300"
+              className="flex items-center gap-3 text-lg font-playfair text-[#0F172A] hover:text-gray-600 transition-colors duration-300"
             >
               <img 
                 src="/images/Landing Page Graphics/logo.png" 
@@ -77,21 +77,23 @@ const SpotHeadPage = () => {
               badge="AMRL • Mechatronics • Sensors"
               colorScheme="spothead"
             >
-              <div className="max-w-2xl">
-                <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
+              {/* warm overlay + dark gradient for readability */}
+              <div className="pointer-events-none absolute inset-0 rounded-3xl" style={{background: 'linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 80%), rgba(255, 240, 150, 0.15)'}} />
+              <div className="relative max-w-2xl">
+                <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-[#0F172A]">
                   AMRL Spot Head
                 </h1>
                 <h2 className="font-playfair text-2xl md:text-3xl font-semibold mb-6 text-spothead-accent">
                   Servo-Actuated Payload & Sensor Mount
                 </h2>
-                <p className="font-inter text-lg opacity-90 mb-2 text-spothead-accent600">
+                <p className="font-inter text-lg opacity-90 mb-2 text-[#334155]">
                   Built servo-actuated head and modular sensor mounts for Boston Dynamics Spot.
                 </p>
-                <p className="font-inter text-lg opacity-90 mb-8 text-spothead-accent600">
+                <p className="font-inter text-lg opacity-90 mb-8 text-[#334155]">
                   Dynamixel pan-tilt, LiDAR + camera pods, and touchscreen HRI — packaged for fast swaps.
                 </p>
                 <motion.button
-                  className="bg-spothead-accent hover:bg-spothead-accent200 text-gray-900 font-inter font-medium px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
+                  className="bg-spothead-accent text-[#0F172A] font-inter font-medium px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:bg-spothead-accent600 active:bg-[#CBB753] shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_24px_rgba(249,226,122,0.5)]"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
@@ -110,25 +112,25 @@ const SpotHeadPage = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
-            <div className="bg-gray-50 rounded-3xl p-6 text-center">
+            <div className="bg-[#F9FAFB] rounded-3xl p-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
               <h3 className="font-playfair text-xl font-bold mb-2 text-spothead-accent600">Actuation</h3>
               <p className="font-inter text-sm text-gray-700">
                 Dynamixel XM/XW pan-tilt, ±170° pan, ±45° tilt
               </p>
             </div>
-            <div className="bg-gray-50 rounded-3xl p-6 text-center">
+            <div className="bg-[#F9FAFB] rounded-3xl p-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
               <h3 className="font-playfair text-xl font-bold mb-2 text-spothead-accent600">Sensors</h3>
               <p className="font-inter text-sm text-gray-700">
                 LiDAR puck + dual pods + touchscreen HRI
               </p>
             </div>
-            <div className="bg-gray-50 rounded-3xl p-6 text-center">
+            <div className="bg-[#F9FAFB] rounded-3xl p-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
               <h3 className="font-playfair text-xl font-bold mb-2 text-spothead-accent600">Mounting</h3>
               <p className="font-inter text-sm text-gray-700">
                 Aluminum base + pan tower, M4/M5 hardware
               </p>
             </div>
-            <div className="bg-gray-50 rounded-3xl p-6 text-center">
+            <div className="bg-[#F9FAFB] rounded-3xl p-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
               <h3 className="font-playfair text-xl font-bold mb-2 text-spothead-accent600">Harnessing</h3>
               <p className="font-inter text-sm text-gray-700">
                 Bundled cabling w/ strain relief
@@ -142,11 +144,11 @@ const SpotHeadPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="bg-gray-50 rounded-4xl p-8 md:p-12"
+            className="bg-[#F9FAFB] rounded-4xl p-8 md:p-12"
           >
             <div className="text-center mb-12">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4">Key Highlights</h2>
-              <p className="font-inter text-lg text-spothead-accent600">What we accomplished</p>
+              <p className="font-inter text-lg text-spothead-accent">What we accomplished</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -182,7 +184,7 @@ const SpotHeadPage = () => {
           >
             <div className="text-center">
               <SectionTitle>Project Gallery</SectionTitle>
-              <p className="font-inter text-lg text-spothead-accent600 mt-4">
+              <p className="font-inter text-lg text-spothead-accent mt-4">
                 Assembly renders and component details
               </p>
             </div>
@@ -229,7 +231,7 @@ const SpotHeadPage = () => {
                   }
                 ].map((item, index) => (
                   <div key={index} className="snap-center flex-shrink-0">
-                    <div className="relative w-80 rounded-3xl overflow-hidden shadow-soft group bg-white">
+                    <div className="relative w-80 rounded-3xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.05)] group bg-white">
                       <div className="h-48 overflow-hidden">
                         <img
                           src={item.src}
@@ -241,8 +243,8 @@ const SpotHeadPage = () => {
                         />
                       </div>
                       <div className="p-4 text-center">
-                        <h3 className="font-inter text-lg font-semibold mb-2 text-spothead-accent600">{item.title}</h3>
-                        <p className="font-inter text-sm text-gray-700">{item.caption}</p>
+                        <h3 className="font-inter text-lg font-semibold mb-2 text-spothead-accent">{item.title}</h3>
+                        <p className="font-inter text-sm text-[#334155]">{item.caption}</p>
                       </div>
                     </div>
                   </div>
@@ -268,14 +270,14 @@ const SpotHeadPage = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-center"
           >
-            <div className="bg-white rounded-4xl p-8 md:p-12 shadow-soft">
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6">Next Steps</h2>
-              <p className="font-inter text-lg text-spothead-accent600 mb-8 max-w-3xl mx-auto">
+            <div className="bg-white rounded-4xl p-8 md:p-12 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6 text-[#0F172A]">Next Steps</h2>
+              <p className="font-inter text-lg text-[#334155] mb-8 max-w-3xl mx-auto">
                 The next phase will focus on field testing the servo-actuated head system, refining sensor integration for improved HRI feedback, and optimizing the modular mounting system for rapid payload swaps in operational scenarios.
               </p>
               <motion.button
                 onClick={() => window.location.href = "mailto:kashfsiddiqui@utexas.edu"}
-                className="bg-spothead-accent hover:bg-spothead-accent200 text-gray-900 font-inter font-medium px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
+                className="bg-spothead-accent text-[#0F172A] font-inter font-medium px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:bg-spothead-accent600 active:bg-[#CBB753] shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_24px_rgba(249,226,122,0.5)]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

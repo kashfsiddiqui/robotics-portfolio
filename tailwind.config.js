@@ -46,10 +46,10 @@ export default {
           accent600: '#6B52C4'
         },
         spothead: {
-          accent: '#FFFDBE', // soft yellow accent for Spot Head page
-          accent50: '#FFFEF0',
-          accent200: '#FFFBE0',
-          accent600: '#E6E0A8'
+          accent: '#F9E27A', // Primary Accent
+          accent50: '#FFF4C2', // Light Accent
+          accent200: '#FFEFA5', // Mid/gradient end
+          accent600: '#DCC85F' // Dark/hover
         }
       },
       fontFamily: {
