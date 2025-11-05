@@ -11,6 +11,7 @@ import ClawPage from './pages/claw';
 import ThrustVectorPage from './pages/thrustvector';
 import HCRLPage from './pages/hcrl';
 import SpotHeadPage from './pages/spot-head';
+import DrilloAIPage from './pages/drilloai';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -33,6 +34,8 @@ function App() {
         setCurrentPage('hcrl');
       } else if (path === '/portfolio/spot-head') {
         setCurrentPage('spot-head');
+      } else if (path === '/portfolio/drilloai') {
+        setCurrentPage('drilloai');
       } else {
         setCurrentPage('home');
       }
@@ -92,6 +95,10 @@ function App() {
 
   if (currentPage === 'spot-head') {
     return <SpotHeadPage />;
+  }
+
+  if (currentPage === 'drilloai') {
+    return <DrilloAIPage />;
   }
 
   return (

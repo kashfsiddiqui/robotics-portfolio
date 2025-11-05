@@ -45,6 +45,12 @@ export default {
           accent200: '#C4B5E8',
           accent600: '#6B52C4'
         },
+        mint: {
+          accent: '#D3F6EB',
+          accent50: '#E3FBF1',
+          accent200: '#DFF9EF',
+          accent600: '#B7E6D7'
+        },
         spothead: {
           accent: '#F9E27A', // Primary Accent
           accent50: '#FFF4C2', // Light Accent
