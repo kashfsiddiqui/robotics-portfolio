@@ -78,9 +78,9 @@ const SpotHeadPage = () => {
               colorScheme="spothead"
             >
               {/* warm yellow gradient + reduced dark overlay for readability */}
-              <div className="pointer-events-none absolute inset-0 rounded-3xl" style={{background: 'linear-gradient(180deg, rgba(255, 240, 170, 0.25) 0%, rgba(0, 0, 0, 0.35) 100%)'}} />
+              <div className="pointer-events-none absolute inset-0 rounded-3xl" style={{background: 'linear-gradient(180deg, rgba(255, 240, 170, 0.0) 0%, rgba(0, 0, 0, 0.35) 100%)'}} />
               <div className="relative max-w-2xl flex flex-col justify-center min-h-[18rem] md:min-h-[24rem]">
-                <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-[#0F172A]">
+                <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-white">
                   AMRL Spot Head
                 </h1>
                 <h2 className="font-playfair text-2xl md:text-3xl font-semibold mb-6 text-spothead-accent">
@@ -93,7 +93,7 @@ const SpotHeadPage = () => {
                   Dynamixel pan-tilt, LiDAR + camera pods, and touchscreen HRI — packaged for fast swaps.
                 </p>
                 <motion.button
-                  className="bg-spothead-accent text-[#0F172A] font-inter font-semibold px-8 py-3 rounded-xl transition-all duration-200 hover:scale-105 hover:bg-spothead-accent50 active:bg-[#CBB753] shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_0_12px_rgba(249,226,122,0.45)] inline-flex items-center gap-2"
+                  className="bg-spothead-accent text-[#0F172A] font-inter font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:scale-105 hover:bg-spothead-accent50 active:bg-[#CBB753] shadow-[0_10px_30px_rgba(0,0,0,0.05)] inline-flex items-center gap-2 max-w-fit self-start"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
