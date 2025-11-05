@@ -12,6 +12,7 @@ import ThrustVectorPage from './pages/thrustvector';
 import HCRLPage from './pages/hcrl';
 import SpotHeadPage from './pages/spot-head';
 import DrilloAIPage from './pages/drilloai';
+import GuadaloopVRPage from './pages/guadaloop-vr';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -36,6 +37,8 @@ function App() {
         setCurrentPage('spot-head');
       } else if (path === '/portfolio/drilloai') {
         setCurrentPage('drilloai');
+      } else if (path === '/portfolio/guadaloop-vr') {
+        setCurrentPage('guadaloop-vr');
       } else {
         setCurrentPage('home');
       }
@@ -99,6 +102,10 @@ function App() {
 
   if (currentPage === 'drilloai') {
     return <DrilloAIPage />;
+  }
+
+  if (currentPage === 'guadaloop-vr') {
+    return <GuadaloopVRPage />;
   }
 
   return (

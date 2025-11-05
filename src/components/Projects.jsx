@@ -123,7 +123,8 @@ const Projects = ({ onSpotClick, onCobotClick }) => {
       image: "/images/Landing Page Graphics/guadaloop_pod_sim.png",
       bgColor: "bg-cyan-100",
       gridSpan: "col-span-1 row-span-1",
-      mobileSpan: "col-span-1 row-span-1"
+      mobileSpan: "col-span-1 row-span-1",
+      link: "/portfolio/guadaloop-vr"
     },
     {
       type: "project",

@@ -51,6 +51,12 @@ export default {
           accent200: '#DFF9EF',
           accent600: '#B7E6D7'
         },
+        vr: {
+          accent: '#D9FFFF',
+          accent50: '#E6FFFF',
+          accent200: '#B3FFFF',
+          accent600: '#99E6E6'
+        },
         spothead: {
           accent: '#F9E27A', // Primary Accent
           accent50: '#FFF4C2', // Light Accent
