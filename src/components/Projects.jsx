@@ -56,10 +56,11 @@ const Projects = ({ onSpotClick, onCobotClick }) => {
       title: "AMRL Spot Head Servo Actuated Payload & Sensor Mount",
       subtitle: "AMRL • Mechatronics • Sensors",
       description: "Built servo-actuated head and sensor mounts for Boston Dynamics Spot.",
-      image: "/images/Landing Page Graphics/amrl_spot_head.png",
+      image: "/images/Portfolio/Spot Head/Full Head Render (Hero View).png",
       bgColor: "bg-yellow-100",
       gridSpan: "col-span-1 row-span-1",
-      mobileSpan: "col-span-1 row-span-1"
+      mobileSpan: "col-span-1 row-span-1",
+      link: "/portfolio/spot-head"
     },
     {
       type: "project",
@@ -225,6 +226,8 @@ const Projects = ({ onSpotClick, onCobotClick }) => {
                     window.location.href = item.link;
                   } else if (item.link === "/portfolio/cobot" && onCobotClick) {
                     onCobotClick();
+                  } else if (item.link === "/portfolio/spot-head") {
+                    window.location.href = item.link;
                   } else {
                     window.location.href = item.link;
                   }

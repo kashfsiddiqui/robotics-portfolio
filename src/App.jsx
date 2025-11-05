@@ -10,6 +10,7 @@ import GuadaloopPage from './pages/guadaloop';
 import ClawPage from './pages/claw';
 import ThrustVectorPage from './pages/thrustvector';
 import HCRLPage from './pages/hcrl';
+import SpotHeadPage from './pages/spot-head';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -30,6 +31,8 @@ function App() {
         setCurrentPage('claw');
       } else if (path === '/portfolio/hcrl') {
         setCurrentPage('hcrl');
+      } else if (path === '/portfolio/spot-head') {
+        setCurrentPage('spot-head');
       } else {
         setCurrentPage('home');
       }
@@ -85,6 +88,10 @@ function App() {
 
   if (currentPage === 'hcrl') {
     return <HCRLPage />;
+  }
+
+  if (currentPage === 'spot-head') {
+    return <SpotHeadPage />;
   }
 
   return (

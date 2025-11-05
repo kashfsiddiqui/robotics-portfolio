@@ -44,11 +44,18 @@ export default {
           accent50: '#F0EDF9',
           accent200: '#C4B5E8',
           accent600: '#6B52C4'
+        },
+        spothead: {
+          accent: '#FFFDBE', // soft yellow accent for Spot Head page
+          accent50: '#FFFEF0',
+          accent200: '#FFFBE0',
+          accent600: '#E6E0A8'
         }
       },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
         'playfair': ['Playfair Display', 'serif'],
+        'claude': ['Claude', 'ui-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
       },
       borderRadius: {
         '3xl': '1.75rem',
