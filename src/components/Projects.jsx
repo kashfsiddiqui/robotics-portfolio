@@ -220,7 +220,7 @@ const Projects = ({ onSpotClick, onCobotClick }) => {
                 key={index}
                 variants={itemVariants}
                 whileHover={item.type === "project" ? cardHoverVariants.hover : undefined}
-                className={`group relative overflow-hidden ${item.bgColor} cursor-pointer project-card ${item.gridSpan} md:${item.gridSpan}`}
+                className={`group relative overflow-hidden rounded-2xl ${item.bgColor} cursor-pointer project-card ${item.gridSpan} md:${item.gridSpan}`}
                 style={{ 
                   minHeight: item.type === "intro" ? "400px" : "200px",
                   gridRowEnd: item.type === "intro" ? "span 2" : "span 1"
