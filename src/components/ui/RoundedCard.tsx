@@ -8,6 +8,7 @@ export const RoundedCard = ({
   badge, 
   className = "",
   colorScheme = "brand",
+  overlayOpacity = { from: 60, via: 20 },
   ...props 
 }) => {
   let badgeClasses = "bg-brand-accent200 text-brand-accent600";
@@ -46,7 +47,12 @@ export const RoundedCard = ({
       </div>
       
       {/* Bottom-left overlay with gradient */}
-      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6">
+      <div 
+        className="absolute bottom-0 left-0 right-0 p-6"
+        style={{
+          background: `linear-gradient(to top, rgba(0, 0, 0, ${overlayOpacity.from / 100}), rgba(0, 0, 0, ${overlayOpacity.via / 100}), transparent)`
+        }}
+      >
         {badge && (
           <div className="mb-3">
             <span className={`inline-block px-3 py-1 text-xs font-medium uppercase tracking-wide rounded-full ${badgeClasses}`}>

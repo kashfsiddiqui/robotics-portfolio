@@ -76,27 +76,25 @@ const GuadaloopVacuumPage = () => {
               alt="PCB 3D view of vacuum control system"
               badge="Guadaloop • Research • Depressurization"
               colorScheme="vacuum"
+              overlayOpacity={{ from: 70, via: 30 }}
             >
-              <div className="max-w-2xl">
+              <div className="max-w-[70%]">
                 <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
-                  Guadaloop Vacuum Research
+                  Depressurization Control & Vacuum Chamber System
                 </h1>
                 <h2 className="font-playfair text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 text-vacuum-accent">
-                  Depressurization Control & Vacuum Chamber System
+                  Guadaloop Vacuum Research
                 </h2>
-                <p className="font-inter text-lg opacity-90 mb-8">
-                  Led the mechanical and system design of a programmable vacuum-chamber test platform for Texas Guadaloop's Depressurization Research division, supporting low-pressure modeling for Hyperloop pod environments. Engineered a 5-gallon stainless-steel vacuum chamber integrated with a 3.5 CFM rotary-vane pump, precision needle-solenoid valve assembly, and dual-sensor pressure feedback loop (Pirani + MEMS) to maintain stable vacuum levels between 20–80 kPa absolute with ±0.5 kPa accuracy. Designed and implemented the physical layout, wiring, and safety feedthroughs, developed a complete Standard Operating Procedure (SOP), and collaborated with the controls lead to enable PWM-based solenoid regulation through an ESP32 microcontroller. The final system achieved a 60% reduction in pressure stabilization time, improved chamber repeatability across test cycles, and established a scalable framework for future automated depressurization and leak-rate characterization experiments at Guadaloop's research lab.
+                <p className="font-inter text-lg opacity-90 mb-8 leading-relaxed">
+                  Designed and built a programmable vacuum-chamber test platform for Texas Guadaloop's Depressurization Research division — enabling low-pressure modeling for Hyperloop pod environments. Integrated a 5-gallon stainless-steel chamber with a 3.5 CFM rotary-vane pump, precision solenoid-valve assembly, and dual-sensor feedback (Pirani + MEMS) to maintain 20–80 kPa vacuum levels within ±0.5 kPa accuracy. Collaborated with the controls team to implement PWM-based solenoid regulation via ESP32, reducing stabilization time by 60% and establishing a modular framework for future automated testing.
                 </p>
                 <motion.button
                   onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="inline-flex items-center px-8 py-4 bg-vacuum-accent hover:bg-vacuum-accent200 text-gray-900 font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                  className="inline-flex items-center px-8 py-4 bg-vacuum-accent hover:bg-vacuum-accent200 text-gray-900 font-inter font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  View Gallery
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  View Gallery ↓
                 </motion.button>
               </div>
             </RoundedCard>
