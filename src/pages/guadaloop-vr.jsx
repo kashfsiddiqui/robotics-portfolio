@@ -72,8 +72,8 @@ const GuadaloopVRPage = () => {
             className="mx-4 md:mx-8 lg:mx-12"
           >
             <RoundedCard
-              imageSrc="/images/Portfolio/Guadaloop VR/Full VR Chamber View.png"
-              alt="Pod Showcase Environment"
+              imageSrc="/images/Portfolio/Guadaloop VR/Research Paper.png"
+              alt="Research Publication"
               badge="Guadaloop • VR • Unity"
               colorScheme="vr"
             >
