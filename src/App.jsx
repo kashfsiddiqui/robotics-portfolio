@@ -13,6 +13,7 @@ import HCRLPage from './pages/hcrl';
 import SpotHeadPage from './pages/spot-head';
 import DrilloAIPage from './pages/drilloai';
 import GuadaloopVRPage from './pages/guadaloop-vr';
+import GuadaloopVacuumPage from './pages/guadaloop-vacuum';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -39,6 +40,8 @@ function App() {
         setCurrentPage('drilloai');
       } else if (path === '/portfolio/guadaloop-vr') {
         setCurrentPage('guadaloop-vr');
+      } else if (path === '/portfolio/guadaloop-vacuum') {
+        setCurrentPage('guadaloop-vacuum');
       } else {
         setCurrentPage('home');
       }
@@ -106,6 +109,10 @@ function App() {
 
   if (currentPage === 'guadaloop-vr') {
     return <GuadaloopVRPage />;
+  }
+
+  if (currentPage === 'guadaloop-vacuum') {
+    return <GuadaloopVacuumPage />;
   }
 
   return (

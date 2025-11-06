@@ -62,6 +62,12 @@ export default {
           accent50: '#FFF4C2', // Light Accent
           accent200: '#FFEFA5', // Mid/gradient end
           accent600: '#DCC85F' // Dark/hover
+        },
+        vacuum: {
+          accent: '#CFEFDF', // green accent for Guadaloop Vacuum page
+          accent50: '#E8F7ED',
+          accent200: '#B7E6D1',
+          accent600: '#8FD4B5'
         }
       },
       fontFamily: {
