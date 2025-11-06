@@ -146,7 +146,8 @@ const Projects = ({ onSpotClick, onCobotClick }) => {
       image: "/images/Landing Page Graphics/pictureplots_planter.png",
       bgColor: "bg-lime-100",
       gridSpan: "col-span-1 row-span-1",
-      mobileSpan: "col-span-1 row-span-1"
+      mobileSpan: "col-span-1 row-span-1",
+      link: "/portfolio/picture-plots"
     }
   ];
 
