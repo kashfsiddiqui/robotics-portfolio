@@ -14,6 +14,7 @@ import SpotHeadPage from './pages/spot-head';
 import DrilloAIPage from './pages/drilloai';
 import GuadaloopVRPage from './pages/guadaloop-vr';
 import GuadaloopVacuumPage from './pages/guadaloop-vacuum';
+import PicturePlotsPage from './pages/picture-plots';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -42,6 +43,8 @@ function App() {
         setCurrentPage('guadaloop-vr');
       } else if (path === '/portfolio/guadaloop-vacuum') {
         setCurrentPage('guadaloop-vacuum');
+      } else if (path === '/portfolio/picture-plots') {
+        setCurrentPage('picture-plots');
       } else {
         setCurrentPage('home');
       }
@@ -113,6 +116,10 @@ function App() {
 
   if (currentPage === 'guadaloop-vacuum') {
     return <GuadaloopVacuumPage />;
+  }
+
+  if (currentPage === 'picture-plots') {
+    return <PicturePlotsPage />;
   }
 
   return (

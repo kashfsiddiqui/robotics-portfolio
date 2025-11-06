@@ -68,6 +68,12 @@ export default {
           accent50: '#E8F7ED',
           accent200: '#B7E6D1',
           accent600: '#8FD4B5'
+        },
+        pictureplots: {
+          accent: '#E3F3B3', // light green accent for PicturePlots page
+          accent50: '#F0F9E0',
+          accent200: '#D9E99F',
+          accent600: '#C5D97A'
         }
       },
       fontFamily: {

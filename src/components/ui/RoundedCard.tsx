@@ -28,6 +28,8 @@ export const RoundedCard = ({
     badgeClasses = "bg-vr-accent200 text-vr-accent600";
   } else if (colorScheme === "vacuum") {
     badgeClasses = "bg-vacuum-accent200 text-vacuum-accent600";
+  } else if (colorScheme === "pictureplots") {
+    badgeClasses = "bg-pictureplots-accent200 text-pictureplots-accent600";
   }
     
   return (
