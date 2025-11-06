@@ -86,7 +86,7 @@ const GuadaloopVacuumPage = () => {
                   Depressurization Control & Vacuum Chamber System
                 </h2>
                 <p className="font-inter text-lg opacity-90 mb-8">
-                  Developed a programmable vacuum-chamber test platform for Texas Guadaloop's Depressurization Research division — integrating a 5-gallon stainless-steel chamber, rotary-vane pump, solenoid valve, and dual-sensor feedback loop to model low-pressure Hyperloop environments with ±0.5 kPa accuracy.
+                  Developed a modular vacuum chamber platform for Texas Guadaloop's Depressurization Research division using a stainless steel chamber, rotary pump, solenoid valve, and sensor feedback loop to model Hyperloop environments.
                 </p>
                 <motion.button
                   onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
@@ -111,7 +111,7 @@ const GuadaloopVacuumPage = () => {
           >
             <h2 className="font-playfair text-3xl mb-4 text-gray-900">Design Insights</h2>
             <p className="max-w-3xl mx-auto text-gray-600 leading-relaxed font-inter">
-              The vacuum research platform was built around modularity, reliability, and scalability for low-pressure Hyperloop modeling. Core design tradeoffs focused on chamber volume versus evacuation time, valve response time, and thermal/vibration isolation for sensor accuracy. The system's stainless-steel body, PTFE feedthroughs, and dual-sensor integration minimized hysteresis and allowed repeatable vacuum stabilization across 20–80 kPa test bands. The final configuration provided a testbed for future control algorithm validation and automated depressurization experiments.
+              The vacuum research platform was built around modularity, reliability, and scalability for low pressure Hyperloop modeling. Core design tradeoffs focused on chamber volume versus evacuation time, valve response time, and thermal and vibration isolation for sensor accuracy. The system's stainless steel body, PTFE feedthroughs, and dual sensor integration minimized hysteresis and allowed repeatable vacuum stabilization across test bands. The final configuration provided a testbed for future control algorithm validation and automated depressurization experiments.
             </p>
           </motion.section>
 
@@ -133,7 +133,7 @@ const GuadaloopVacuumPage = () => {
             
             {/* Horizontal scroll gallery */}
             <div className="overflow-x-auto scrollbar-hide snap-x snap-mandatory">
-              <div className="flex space-x-6 pb-4" style={{ width: 'max-content' }}>
+              <div className="flex space-x-6 pb-4 justify-center" style={{ width: 'max-content' }}>
                 {[
                   {
                     src: '/images/Portfolio/Guadaloop Vacuum/PCB.png',

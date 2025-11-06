@@ -13,6 +13,7 @@ const Projects = ({ onSpotClick, onCobotClick }) => {
       title: "Hi, I'm Kashf.",
       subtitle: "I design and build things.",
       description: "These are some of my projects.",
+      caption: "Tap a project below to see how each one came to life.",
       bgColor: "bg-[#F4F4EE]",
       gridSpan: "col-span-2 row-span-2",
       mobileSpan: "col-span-2 row-span-2"
@@ -108,7 +109,7 @@ const Projects = ({ onSpotClick, onCobotClick }) => {
     },
     {
       type: "project",
-      title: "GUADALOOP Depressurization Research Vacuum Chamber Systems",
+      title: "Guadaloop Depressurization Research Vacuum Chamber Systems",
       subtitle: "Guadaloop • Vacuum • Research",
       description: "Developed vacuum chamber systems for hyperloop depressurization research.",
       image: "/images/Landing Page Graphics/guadaloop_vacuum.png",
@@ -247,9 +248,14 @@ const Projects = ({ onSpotClick, onCobotClick }) => {
                     <h2 className="text-3xl md:text-4xl font-playfair text-gray-900 mb-4">
                       {item.subtitle}
                     </h2>
-                    <p className="text-3xl md:text-4xl font-playfair text-gray-900">
+                    <p className="text-3xl md:text-4xl font-playfair text-gray-900 mb-4">
                       {item.description}
                     </p>
+                    {item.caption && (
+                      <p className="text-3xl md:text-4xl font-playfair text-gray-900">
+                        {item.caption}
+                      </p>
+                    )}
                   </div>
                 ) : (
                   // Project block content

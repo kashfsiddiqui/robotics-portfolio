@@ -72,8 +72,8 @@ const PicturePlotsPage = () => {
             className="mx-4 md:mx-8 lg:mx-12"
           >
             <RoundedCard
-              imageSrc="/images/Portfolio/PicturePlots/Hero_Desk_Planter_Rendered.png"
-              alt="Hero Desk Planter rendered in Blender"
+              imageSrc="/images/Portfolio/PicturePlots/Planter_Wireframe_View_Hero_Planter.png"
+              alt="Hero Planter wireframe view"
               badge="DESIGN"
               colorScheme="pictureplots"
             >
@@ -85,7 +85,7 @@ const PicturePlotsPage = () => {
                   Form, Texture, and Design Studies
                 </h2>
                 <p className="font-inter text-lg opacity-90 mb-8">
-                  An exploration in form and geometry — translating everyday objects into clean digital sculptures through Blender. The PicturePlots collection showcases contrast between organic curves and structured faceted forms.
+                  Explored form and geometry through 3D printed biodegradable planters designed in Blender. The project focused on simplicity in structure, clean surfaces, and contrast between curved and angular forms.
                 </p>
                 <motion.button
                   onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}

@@ -54,7 +54,7 @@ const LHBRPage = () => {
                     Dynamics Engineer • Austin, TX
                   </h2>
                   <p className="text-neutral-100 font-inter mt-3 max-w-2xl mb-6">
-                    Led dynamics hardware validation for an off-road vehicle, aligning mechanical and electrical teams through design reviews and prototyping. Applied telemetry-based suspension updates and driver feedback, improving handling by 15% and reducing chassis stress by 10%.
+                    Worked on suspension and chassis integration for an off-road vehicle, focusing on steering geometry, damping calibration, and reliability under dynamic terrain conditions.
                   </p>
                   <motion.button
                     onClick={(e) => {
@@ -115,43 +115,43 @@ const LHBRPage = () => {
                     type: 'image',
                     src: '/images/Portfolio/LHBR/Baja_Suspension_Assembly.png',
                     alt: 'Suspension assembly',
-                    caption: 'Suspension assembly — validating linkages and joint clearances for rugged terrain.'
-                  },
-                  {
-                    type: 'image',
-                    src: '/images/Portfolio/LHBR/Baja_Frame_Assembled_View.png',
-                    alt: 'Assembled chassis view',
-                    caption: 'Assembled chassis view — showing reinforced geometry and mounting points.'
-                  },
-                  {
-                    type: 'image',
-                    src: '/images/Portfolio/LHBR/Baja_Frame_Wireframe_View.png',
-                    alt: 'Wireframe model',
-                    caption: 'Wireframe model — frame geometry and wheelbase constraints visualization.'
+                    caption: 'Suspension assembly validating linkages and joint clearances for rugged terrain.'
                   },
                   {
                     type: 'image',
                     src: '/images/Portfolio/LHBR/CHASSIS.png',
                     alt: 'Final chassis render',
-                    caption: 'Final chassis render — optimized tubing layout for lightweight structural integrity.'
+                    caption: 'Final chassis render optimized tubing layout for lightweight structural integrity.'
                   },
                   {
                     type: 'image',
                     src: '/images/Portfolio/LHBR/Actuator_Linkage_Top_View.png',
                     alt: 'Top view',
-                    caption: 'Top view — joint alignment and kinematic constraints.'
+                    caption: 'Top view joint alignment and kinematic constraints.'
+                  },
+                  {
+                    type: 'image',
+                    src: '/images/Portfolio/LHBR/Baja_Frame_Wireframe_View.png',
+                    alt: 'Wireframe model',
+                    caption: 'Wireframe model frame geometry and wheelbase visualization.'
                   },
                   {
                     type: 'image',
                     src: '/images/Portfolio/LHBR/Actuator_Linkage_Side_View.png',
                     alt: 'Side view',
-                    caption: 'Side view — actuator placement and stroke validation.'
+                    caption: 'Side view actuator placement and stroke validation.'
+                  },
+                  {
+                    type: 'image',
+                    src: '/images/Portfolio/LHBR/Baja_Frame_Wireframe_View.png',
+                    alt: 'Wireframe model',
+                    caption: 'Wireframe model frame geometry and wheelbase visualization.'
                   },
                   {
                     type: 'video',
                     src: '/images/Portfolio/LHBR/Actuator Simulation.mp4',
                     alt: 'Suspension motion simulation',
-                    caption: 'Suspension motion simulation — actuator response and linkage interaction.'
+                    caption: 'Suspension motion simulation actuator response and linkage interaction.'
                   }
                 ].map((item, index) => (
                   <div key={index} className="snap-center flex-shrink-0">

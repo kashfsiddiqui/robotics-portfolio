@@ -72,8 +72,8 @@ const GuadaloopVRPage = () => {
             className="mx-4 md:mx-8 lg:mx-12"
           >
             <RoundedCard
-              imageSrc="/images/Portfolio/Guadaloop VR/Research Paper.png"
-              alt="Guadaloop VR Simulation research paper"
+              imageSrc="/images/Portfolio/Guadaloop VR/Full VR Chamber View.png"
+              alt="Pod Showcase Environment"
               badge="Guadaloop • VR • Unity"
               colorScheme="vr"
             >
@@ -84,11 +84,8 @@ const GuadaloopVRPage = () => {
                 <h2 className="font-playfair text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 text-vr-accent">
                   Immersive Pod Dynamics
                 </h2>
-                <p className="font-inter text-lg opacity-90 mb-2">
-                  Developed Unity-based VR simulation for pod testing; improved stability by 15%.
-                </p>
                 <p className="font-inter text-lg opacity-90 mb-8">
-                  Integrated propulsion, levitation, and dynamics modules within a VR environment for real-time analysis and visualization.
+                  Developed a Unity based VR environment that visualizes the dynamics and control systems of the Hyperloop pod, enabling real time interaction and testing.
                 </p>
                 <motion.button
                   onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
@@ -116,44 +113,9 @@ const GuadaloopVRPage = () => {
           >
             <h2 className="font-playfair text-3xl mb-4 text-gray-900">Design Insights</h2>
             <p className="max-w-3xl mx-auto text-gray-600 leading-relaxed font-inter">
-              Creating the Guadaloop VR simulation involved translating the physical pod systems—propulsion, levitation, and dynamics—into an interactive digital space. Built in Unity, the simulation mirrors subsystem performance with physics-based accuracy, while maintaining a visually immersive design. Each component is engineered for modular testing, letting users explore stability effects and dynamic responses interactively.
+              Creating the Guadaloop VR simulation involved translating the physical pod systems of propulsion, levitation, and dynamics into an interactive digital space. Built in Unity, the simulation mirrors subsystem performance with physics based accuracy while maintaining a visually immersive design. Each component is engineered for modular testing, letting users explore stability effects and dynamic responses interactively.
             </p>
           </motion.section>
-
-          {/* Key Highlights */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="bg-gray-50 rounded-4xl p-8 md:p-12"
-          >
-            <div className="text-center mb-12">
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4">Key Highlights</h2>
-              <p className="font-inter text-lg text-vr-accent">What we accomplished</p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {[
-                "Real-time physics-driven simulation in Unity for pod subsystems",
-                "Improved overall system stability by 15% under VR testing",
-                "Integrated propulsion, levitation, and dynamics modules",
-                "Developed scalable architecture for future pod iterations"
-              ].map((highlight, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-start space-x-4"
-                >
-                  <div className="w-3 h-3 rounded-full bg-vr-accent mt-2 flex-shrink-0"></div>
-                  <p className="font-inter text-gray-700">{highlight}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
 
           {/* Gallery Carousel */}
           <motion.div
@@ -229,6 +191,41 @@ const GuadaloopVRPage = () => {
                 <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
                 <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
               </div>
+            </div>
+          </motion.div>
+
+          {/* Key Highlights */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="bg-gray-50 rounded-4xl p-8 md:p-12"
+          >
+            <div className="text-center mb-12">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4">Key Highlights</h2>
+              <p className="font-inter text-lg text-vr-accent">What we accomplished</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {[
+                "Real-time physics-driven simulation in Unity for pod subsystems",
+                "Improved overall system stability by 15% under VR testing",
+                "Integrated propulsion, levitation, and dynamics modules",
+                "Developed scalable architecture for future pod iterations"
+              ].map((highlight, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="flex items-start space-x-4"
+                >
+                  <div className="w-3 h-3 rounded-full bg-vr-accent mt-2 flex-shrink-0"></div>
+                  <p className="font-inter text-gray-700">{highlight}</p>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 

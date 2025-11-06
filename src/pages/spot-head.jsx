@@ -87,10 +87,10 @@ const SpotHeadPage = () => {
                   Servo-Actuated Payload & Sensor Mount
                 </h2>
                 <p className="font-inter text-lg opacity-90 mb-2 text-[#E5E7EB]">
-                  Built servo-actuated head and modular sensor mounts for Boston Dynamics Spot.
+                  Built servo actuated head and modular sensor mounts for Boston Dynamics Spot.
                 </p>
                 <p className="font-inter text-lg opacity-90 mb-8 text-[#E5E7EB]">
-                  Dynamixel pan-tilt, LiDAR + camera pods, and touchscreen HRI — packaged for fast swaps.
+                  Dynamixel pan tilt, LiDAR and camera pods, and touchscreen HRI packaged for fast swaps.
                 </p>
                 <motion.button
                   className="bg-spothead-accent text-[#0F172A] font-inter font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:scale-105 hover:bg-spothead-accent50 active:bg-[#CBB753] shadow-[0_10px_30px_rgba(0,0,0,0.05)] inline-flex items-center gap-2 max-w-fit self-start"
@@ -187,7 +187,7 @@ const SpotHeadPage = () => {
           >
             <div className="text-center">
               <SectionTitle>Project Gallery</SectionTitle>
-              <p className="font-inter text-lg text-spothead-accent mt-4">
+              <p className="font-inter text-lg text-[#0F172A] mt-4">
                 Assembly renders and component details
               </p>
             </div>
@@ -211,7 +211,7 @@ const SpotHeadPage = () => {
                   {
                     src: '/images/Portfolio/Spot Head/Tilt Yoke.png',
                     alt: 'Eye bezels, smile insert, fillets, and curvature continuity',
-                    title: 'Tilt Yoke + Face Shell Close-Up',
+                    title: 'Tilt Yoke Face Shell Close Up',
                     caption: 'Eye bezels, smile insert, fillets, and curvature continuity.'
                   },
                   {
@@ -246,7 +246,7 @@ const SpotHeadPage = () => {
                         />
                       </div>
                       <div className="p-4 text-center">
-                        <h3 className="font-inter text-lg font-semibold mb-2 text-spothead-accent">{item.title}</h3>
+                        <h3 className="font-playfair text-lg font-semibold mb-2 text-[#0F172A]">{item.title}</h3>
                         <p className="font-inter text-sm text-[#334155]">{item.caption}</p>
                       </div>
                     </div>
