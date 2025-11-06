@@ -129,7 +129,7 @@ const PicturePlotsPage = () => {
             <div className="text-center">
               <SectionTitle>Project Gallery</SectionTitle>
               <p className="font-inter text-lg text-gray-600 mt-4">
-                Explore multiple render perspectives — from detailed top views to wireframe structures.
+                Explore multiple render perspectives from detailed top views to wireframe structures.
               </p>
             </div>
             
@@ -140,32 +140,32 @@ const PicturePlotsPage = () => {
                   {
                     src: '/images/Portfolio/PicturePlots/Hero_Desk_Planter_Rendered.png',
                     alt: 'Hero Planter artistic render',
-                    caption: 'Hero Planter — artistic render'
+                    caption: 'Hero Planter artistic render'
                   },
                   {
                     src: '/images/Portfolio/PicturePlots/Top View Hero Planter.png',
                     alt: 'Hero Planter top view',
-                    caption: 'Hero Planter — top view'
+                    caption: 'Hero Planter top view'
                   },
                   {
                     src: '/images/Portfolio/PicturePlots/Planter_Wireframe_View_Hero_Planter.png',
                     alt: 'Hero Planter wireframe view',
-                    caption: 'Hero Planter — wireframe view'
+                    caption: 'Hero Planter wireframe view'
                   },
                   {
                     src: '/images/Portfolio/PicturePlots/Geometric planter.png',
                     alt: 'Geometric Planter artistic render',
-                    caption: 'Geometric Planter — artistic render'
+                    caption: 'Geometric Planter artistic render'
                   },
                   {
                     src: '/images/Portfolio/PicturePlots/Top View Geometric Planter.png',
                     alt: 'Geometric Planter top view',
-                    caption: 'Geometric Planter — top view'
+                    caption: 'Geometric Planter top view'
                   },
                   {
                     src: '/images/Portfolio/PicturePlots/Geometric Planter Wireframe.png',
                     alt: 'Geometric Planter wireframe view',
-                    caption: 'Geometric Planter — wireframe view'
+                    caption: 'Geometric Planter wireframe view'
                   }
                 ].map((item, index) => (
                   <div key={index} className="snap-center flex-shrink-0">
