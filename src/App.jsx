@@ -15,6 +15,7 @@ import DrilloAIPage from './pages/drilloai';
 import GuadaloopVRPage from './pages/guadaloop-vr';
 import GuadaloopVacuumPage from './pages/guadaloop-vacuum';
 import PicturePlotsPage from './pages/picture-plots';
+import LHBRPage from './pages/lhbr';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -45,6 +46,8 @@ function App() {
         setCurrentPage('guadaloop-vacuum');
       } else if (path === '/portfolio/picture-plots') {
         setCurrentPage('picture-plots');
+      } else if (path === '/portfolio/lhbr') {
+        setCurrentPage('lhbr');
       } else {
         setCurrentPage('home');
       }
@@ -120,6 +123,10 @@ function App() {
 
   if (currentPage === 'picture-plots') {
     return <PicturePlotsPage />;
+  }
+
+  if (currentPage === 'lhbr') {
+    return <LHBRPage />;
   }
 
   return (

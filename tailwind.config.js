@@ -74,6 +74,12 @@ export default {
           accent50: '#F0F9E0',
           accent200: '#D9E99F',
           accent600: '#C5D97A'
+        },
+        lhbr: {
+          accent: '#F7D8D8', // light pink accent for LHBR page
+          accent50: '#FCE8E8',
+          accent200: '#F2C8C8',
+          accent600: '#E8A8A8'
         }
       },
       fontFamily: {
