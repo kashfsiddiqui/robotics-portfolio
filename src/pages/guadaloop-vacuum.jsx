@@ -78,19 +78,19 @@ const GuadaloopVacuumPage = () => {
               colorScheme="vacuum"
               overlayOpacity={{ from: 70, via: 30 }}
             >
-              <div className="max-w-[70%]">
+              <div className="max-w-2xl">
                 <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
-                  Depressurization Control & Vacuum Chamber System
+                  Guadaloop Vacuum Research
                 </h1>
                 <h2 className="font-playfair text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 text-vacuum-accent">
-                  Guadaloop Vacuum Research
+                  Depressurization Control & Vacuum Chamber System
                 </h2>
-                <p className="font-inter text-lg opacity-90 mb-8 leading-relaxed">
-                  Designed and built a programmable vacuum-chamber test platform for Texas Guadaloop's Depressurization Research division — enabling low-pressure modeling for Hyperloop pod environments. Integrated a 5-gallon stainless-steel chamber with a 3.5 CFM rotary-vane pump, precision solenoid-valve assembly, and dual-sensor feedback (Pirani + MEMS) to maintain 20–80 kPa vacuum levels within ±0.5 kPa accuracy. Collaborated with the controls team to implement PWM-based solenoid regulation via ESP32, reducing stabilization time by 60% and establishing a modular framework for future automated testing.
+                <p className="font-inter text-lg opacity-90 mb-8">
+                  Developed a programmable vacuum-chamber test platform for Texas Guadaloop's Depressurization Research division — integrating a 5-gallon stainless-steel chamber, rotary-vane pump, solenoid valve, and dual-sensor feedback loop to model low-pressure Hyperloop environments with ±0.5 kPa accuracy.
                 </p>
                 <motion.button
                   onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="inline-flex items-center px-8 py-4 bg-vacuum-accent hover:bg-vacuum-accent200 text-gray-900 font-inter font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                  className="inline-flex items-center px-8 py-4 bg-vacuum-accent hover:bg-vacuum-accent200 text-gray-900 font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
