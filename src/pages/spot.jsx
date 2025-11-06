@@ -99,21 +99,6 @@ const SpotPage = () => {
             </RoundedCard>
           </motion.div>
 
-          {/* Design Insights Section */}
-          <motion.section
-            id="design-insights"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="rounded-3xl shadow-md bg-gray-50 px-10 py-16 mt-16 text-center"
-          >
-            <h2 className="font-playfair text-3xl mb-4 text-gray-900">Design Insights</h2>
-            <p className="max-w-3xl mx-auto text-gray-600 leading-relaxed font-inter">
-              Developing Spot's payload architecture required balancing perception and control within strict stability limits. Each iteration in Fusion refined mounting geometry, center of mass offset, and cable routing to optimize both field performance and modularity. Thermal management and sensor alignment were continuously validated through real world tests to ensure reliability under dynamic load conditions.
-            </p>
-          </motion.section>
-
           {/* Three-card strip */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -155,6 +140,21 @@ const SpotPage = () => {
               </p>
             </RoundedCard>
           </motion.div>
+
+          {/* Design Insights Section */}
+          <motion.section
+            id="design-insights"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="rounded-3xl shadow-md bg-gray-50 px-10 py-16 mt-16 text-center"
+          >
+            <h2 className="font-playfair text-3xl mb-4 text-gray-900">Design Insights</h2>
+            <p className="max-w-3xl mx-auto text-gray-600 leading-relaxed font-inter">
+              Developing Spot's payload architecture required balancing perception and control within strict stability limits. Each iteration in Fusion refined mounting geometry, center of mass offset, and cable routing to optimize both field performance and modularity. Thermal management and sensor alignment were continuously validated through real world tests to ensure reliability under dynamic load conditions.
+            </p>
+          </motion.section>
 
           {/* Wide feature block */}
           <motion.div
